@@ -22,3 +22,4 @@ clientRoute.route('/client/:id').get( async (req, res) => {
     return res.json(await deleteClient(req.params.id));
   })
 
+  export default clientRoute;

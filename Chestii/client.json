@@ -1,0 +1,20 @@
+{
+    "NumeClient": "Cojocaru2",
+    "PrenumeClient": "Alin2",
+    "Adresa":"adresa3",
+    "EmailClient":"email4",
+    "NumarTelefon": "0757217292",
+    "Comenzi":[
+        {
+            "DataComenzii": "2020-11-10"
+        },
+        {
+            "DataComenzii": "2020-11-10"
+        },
+        {
+            "DataComenzii": "2020-11-10"
+        }
+    ]
+
+
+}
