@@ -9,6 +9,13 @@ const Client = db.define("Client",{
         autoIncrement: true,
         allowNull: false
     },
+    ContId:
+    {
+        type: Sequelize.INTEGER,
+        autoIncrement: false,
+        primaryKey: true,
+        allowNull: false
+    },
     NumeClient:
     {
         type: Sequelize.STRING,

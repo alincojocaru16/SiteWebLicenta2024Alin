@@ -3,7 +3,7 @@ import env from 'dotenv';
 import Client from './Client.js';
 import Comanda from './Comanda.js';
 import Produse from './Produse.js';
-
+import Conturi from './Conturi.js';
 env.config();
 
 function Create_DB(){
@@ -39,6 +39,8 @@ function FK_Config(){
     // Comanda.belongsToMany(Produse,{through:"ProduseComanda", as:"Produse", foreignKey:"ComandaId"})
     // Produse.belongsToMany(Comanda,{through:"ProduseComanda", as:"Comenzi", foreignKey:"IdProdus"})
 
+    Conturi.belongsTo(Client,{foreignKey:"ClientId"});
+    Client.belongsTo(Conturi,{foreignKey:"ContId"});
 
 };
 
