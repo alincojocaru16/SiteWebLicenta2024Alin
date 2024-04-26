@@ -3,27 +3,20 @@ import Sequelize from 'sequelize';
  
 
 const Produse = db.define("Produse",{
-    IdProdus:{
+    IdProduseComandate:{
         type: Sequelize.INTEGER,
         primaryKey: true,
-        autoIncrement: true,
-        allowNull: false
-    },
-    ComandaId:{
-        type: Sequelize.INTEGER,
         autoIncrement: false,
         allowNull: false
     },
-    NumeProdus:{
-        type: Sequelize.STRING,
-        allowNull: false
-    },
-    CodProdus:{
+    IdProdus:{
         type: Sequelize.INTEGER,
+        autoIncrement: false,
+        primaryKey: true,
         allowNull: false
     },
-    PretProdus:{
-        type: Sequelize.REAL,
+    Cantitate:{
+        type: Sequelize.INTEGER,
         allowNull: false
     }
 })

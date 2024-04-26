@@ -4,6 +4,7 @@ import Client from './Client.js';
 import Comanda from './Comanda.js';
 import Produse from './Produse.js';
 import Conturi from './Conturi.js';
+import StockProduse from './StockProduse.js';
 env.config();
 
 function Create_DB(){
@@ -31,17 +32,23 @@ function FK_Config(){
     })
     Comanda.belongsTo(Client, { foreignKey:"ClientId"})
 
-    Comanda.hasMany(Produse,{
-        as:"Produse", foreignKey:"ComandaId"
-    }) 
-    Produse.belongsTo(Comanda, {foreignKey:"ComandaId"})
-
-    // Comanda.belongsToMany(Produse,{through:"ProduseComanda", as:"Produse", foreignKey:"ComandaId"})
-    // Produse.belongsToMany(Comanda,{through:"ProduseComanda", as:"Comenzi", foreignKey:"IdProdus"})
-
     Conturi.belongsTo(Client,{foreignKey:"ClientId"});
     Client.belongsTo(Conturi,{foreignKey:"ContId"});
 
+
+    Produse.hasMany(StockProduse,{
+        as:"ProduseStock", foreignKey:"IdProdus"
+    })
+    StockProduse.belongsTo(Produse, { foreignKey:"IdProdus"})
+
+
+
+    Comanda.hasMany(Produse,{
+        as:"ProduseComanda", foreignKey:"IdProduseComandate"
+    }) 
+    Produse.belongsTo(Comanda, {foreignKey:"IdProduseComandate"})
+
+   
 };
 
 

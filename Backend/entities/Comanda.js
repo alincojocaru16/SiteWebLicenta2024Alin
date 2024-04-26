@@ -14,6 +14,11 @@ const Comanda = db.define("Comanda",{
         autoIncrement: false,
         allowNull: false
     },
+    IdProduseComandate:{
+        type: Sequelize.INTEGER,
+        autoIncrement: false,
+        allowNull: false
+    },
     DataComenzii:{
         type: Sequelize.DATE,
         primaryKey: false,

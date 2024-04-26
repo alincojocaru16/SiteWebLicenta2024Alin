@@ -4,15 +4,15 @@ import LikeOp from "./Operators.js";
 
 
 async function createComanda(comanda){
-    return await Comanda.create(comanda, {include: [{model: Produse, as: "Produse"}]})
+    return await Comanda.create(comanda, {include: [{model: Produse, as: "ProduseComanda"}]})
 }
 
 async function getComanda(){
-    return await Comanda.findAll({include: ["Produse"]});
+    return await Comanda.findAll({include: ["ProduseComanda"]});
 }
 
 async function getComandaById(id){
-    return await Comanda.findByPk(id, {include: ["Produse"]});
+    return await Comanda.findByPk(id, {include: ["ProduseComanda"]});
 }
 
 async function deleteComanda(id){

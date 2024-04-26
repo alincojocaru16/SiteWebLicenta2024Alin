@@ -6,6 +6,7 @@ import clientRoute from './routes/ClientRouter.js';
 import comandaRouter from './routes/ComandaRouter.js';
 import produseRouter from './routes/ProduseRouter.js';
 import conturiRouter from './routes/ConturiRouter.js';
+import stockRouter from './routes/StockProduseRouter.js';
 env.config();
 
 let app = express();
@@ -21,6 +22,7 @@ app.use("/api",clientRoute);
 app.use("/api",comandaRouter);
 app.use("/api",produseRouter);
 app.use("/api",conturiRouter);
+app.use("/api",stockRouter);
 
 
 

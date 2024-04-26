@@ -1,0 +1,10 @@
+Avem 4 Tabele : 
+1. Tabela Comanda cu IdComanda,ClientId si DataComenzii
+2. StockProduse care contine produsele din magazin cu IdProdus,NumeProdus,PretProdus
+3.Tabela intermediara  ProduseComandate de comanda care contine IdProdusComandate, IdProdus, Cantitate
+4. Tabela de asociere ComandaStockProduse unde o sa fie IdComanda care poate sa aiba mai multe IdProdus 
+
+de exemplu 
+
+
+Comanda cu id 1 are IdProduseComandate ( care are  IdProdus 1 in cantitate 3, IdProdus 3 in cantitate 4);
