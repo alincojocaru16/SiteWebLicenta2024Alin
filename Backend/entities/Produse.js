@@ -12,7 +12,7 @@ const Produse = db.define("Produse",{
     IdProdus:{
         type: Sequelize.INTEGER,
         autoIncrement: false,
-        primaryKey: true,
+       
         allowNull: false
     },
     Cantitate:{

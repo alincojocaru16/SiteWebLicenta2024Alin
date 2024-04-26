@@ -2,7 +2,7 @@ import StockProduse from "../entities/StockProduse.js";
 
 
 async function createProdus(produs){
-    return await Conturi.create(produs)
+    return await StockProduse.create(produs)
 }
 async function getProdus(){
     return await StockProduse.findAll();
