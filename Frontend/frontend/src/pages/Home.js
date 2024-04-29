@@ -13,10 +13,6 @@ const StyledButton = styled.button`
     margin: 4px 2px;
     cursor: pointer;
     border-radius: 4px;
-
-    &:hover {
-        background-color: #45a049;
-    }
 `;
 
 const Container = styled.div`
@@ -30,17 +26,31 @@ const ActionButtons = styled.div`
     right: 10px; /* Ajustează pentru spațiu între butoane și marginea din dreapta */
 `;
 
+// Background-ul pentru fundal
 const Background = styled.div`
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background-color: transparent; /* Schimbarea fundalului la transparent */
+    height: calc(100% - 20px); /* Înălțimea Background-ului */
+    background-color: #e6f0ff; /* Albastru deschis */
     z-index: -1; /* Asigură-te că este plasat sub butoane */
+`;
+
+const LogoContainer = styled.div`
+    position: absolute;
+    top: -40px; /* Ajustează poziția logo-ului mai sus */
+    left: 0;
+    width: 100px; /* Lățimea logo-ului */
+    height: 100px; /* Înălțimea logo-ului */
+    padding: 20px; /* Spațierea pentru logo */
+    box-sizing: border-box; /* Asigură că padding-ul nu afectează dimensiunea totală */
     display: flex;
-    justify-content: flex-start; /* Aliniere la început */
-    align-items: flex-start; /* Aliniere la început */
+    justify-content: center;
+    align-items: center;
+    /* Modificare pentru a face dimensiunea logo-ului mai mare în înălțime */
+    height: 160px; /* Înălțimea containerului logo-ului */
+    transform: scale(1.5); /* Efect de zoom la logo */
 `;
 
 const Logo = styled.img`
@@ -55,9 +65,10 @@ export default function Home() {
                 <StyledButton id="login">Login</StyledButton>
                 <StyledButton id="register">Register</StyledButton>
             </ActionButtons>
-            <Background>
+            <Background />
+            <LogoContainer>
                 <Logo src={require('../Poze/logobun.png')} alt="Logo" />
-            </Background>
+            </LogoContainer>
         </Container>
     );
 }

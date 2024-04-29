@@ -6,7 +6,7 @@ const Navbar = styled.nav`
     width: 100%;
     height: 60px;
     position: absolute;
-    top: 100px; /* Ajustăm această valoare pentru a poziționa meniul sub butoane */
+    top: 80px; /* Ajustăm această valoare pentru a poziționa meniul sub butoane */
     background-color: rgba(0, 0, 0, 0.5); /* Fundal transparent */
     display: flex;
     justify-content: center; /* Aliniere orizontală la centru */
