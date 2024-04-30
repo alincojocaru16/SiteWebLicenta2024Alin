@@ -107,12 +107,27 @@ const OfferTitle = styled.h2`
     text-align: center; /* Aliniere text la centru */
 `;
 
-const OfferItemContainer = styled.div`
-    position: relative;
-    text-align: left;
-    margin-right: 800px;
-    margin-top:100px; /* Adaugă o margine de 20px în partea de sus */
-`;
+// const OfferItemContainerStanga = styled.div`
+//     position: relative;
+//     text-align: left;
+//     margin-right: 800px;
+//     margin-top:100px; /* Adaugă o margine de 20px în partea de sus */
+// `;
+// const OfferItemContainerMijloc = styled.div`
+//     position: relative;
+//     text-align: left;
+//     margin-left: 450px;
+   
+//     margin-top:-157px; /* Adaugă o margine de 20px în partea de sus */
+// `;
+
+// const OfferItemContainerDreapta = styled.div`
+//     position: relative;
+//     text-align: left;
+//     margin-left: 900px;
+   
+//     margin-top:-157px; /* Adaugă o margine de 20px în partea de sus */
+// `;
 
 const OfferImage = styled.img`
     width: 100px; /* Lățimea imaginii */
@@ -138,6 +153,27 @@ const Price = styled.p`
     margin: 0; /* Elimină marginile implicit adăugate de paragraf */
     margin-bottom: 5px; /* Spațiu între preț și descriere */
 `;
+const OfferItemsContainer = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Așază elementele la începutul, mijlocul și sfârșitul containerului */
+    gap: 20px; /* Spațiu între elementele din container */
+    margin-top: 20px; /* Margin de sus */
+`;
+
+const OfferItem = styled.div`
+    width: calc(16.67% - 10px); /* Lățimea fiecărui element, pentru a încadra 6 pe un rând */
+    padding: 10px; /* Padding pentru a separa conținutul */
+    background-color: #f9f9f9; /* Culoare de fundal pentru element */
+    border-radius: 8px; /* Colțuri rotunjite */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Umbra pentru efect de adâncime */
+    transition: transform 0.3s ease; /* Tranziție pentru efect de hover */
+    &:hover {
+        transform: translateY(-5px); /* Efect de ridicare la hover */
+    }
+`;
+
+
 
 export default function Home() {
     return (
@@ -165,18 +201,79 @@ export default function Home() {
             <LeftImage src={require('../Poze/superOferta.png')} alt="Super Oferta" />
             <RightImage src={require('../Poze/superOferta.png')} alt="Super Oferta" />
             <OfferTitle>CELE MAI BUNE OFERTE</OfferTitle>
-            <OfferItemContainer>
-                
-                <a href='/zmeu'>
+            <OfferItemsContainer>
+        <OfferItem>
+            <a href='/zmeu'>
                 <OfferImage src={require('../Poze/pcZmeu.jpg')} alt="PC ZMEU" />
-    <OfferDescription>
-        <Price>PRET: 1499,99 RON</Price>
-        PC Gaming ZMEU Max, AMD Ryzen 3 3200G 3.6GHz, 8GB DDR4, 1TB SSD, AMD Radeon Vega 8, Iluminare RGB (
-        <Discount>25% reducere</Discount>
-        ) 
-    </OfferDescription>
-</a>
-            </OfferItemContainer>
+                <OfferDescription>
+                    <Price>PRET: 1499,99 RON</Price>
+                    PC Gaming ZMEU Max, AMD Ryzen 3 3200G 3.6GHz, 8GB DDR4, 1TB SSD, AMD Radeon Vega 8, Iluminare RGB (
+                    <Discount>25% reducere</Discount>
+                    ) 
+                </OfferDescription>
+            </a>
+        </OfferItem>
+        <OfferItem>
+            <a href='/zmeu'>
+                <OfferImage src={require('../Poze/pcBlue.jpg')} alt="PC ZMEU" />
+                <OfferDescription>
+                    <Price>PRET: 5398,99 RON</Price>
+                    PC Gaming Blue Legendar Ultra, Intel i5-13400F 2.5GHz, 32GB DDR4, 1TB SSD, RTX 4060 8GB GDDR6, Illuminare RGB (
+                    <Discount>15% reducere</Discount>
+                    ) 
+                </OfferDescription>
+            </a>
+        </OfferItem>
+
+        <OfferItem>
+        <a href='/zmeu'>
+                <OfferImage src={require('../Poze/pcWhite.jpg')} alt="PC ZMEU" />
+                <OfferDescription>
+                    <Price>PRET: 3699,99 RON</Price>
+                    PC Gaming  Legendar White Hyper, Intel i5-12400F 2.5GHz, 16GB DDR5, 1TB SSD, RTX 3050 8GB GDDR6, Iluminare RGB (
+                    <Discount>5% reducere</Discount>
+                    ) 
+                </OfferDescription>
+            </a>
+        </OfferItem>
+        <OfferItem>
+        <a href='/zmeu'>
+                <OfferImage src={require('../Poze/laptopAsusTuf.jpg')} alt="PC ZMEU" />
+                <OfferDescription>
+                    <Price>PRET: 3498,99 RON</Price>
+                    Laptop ASUS Gaming 15.6'' TUF F15 FX507ZC4, FHD 144Hz, Procesor Intel® Core™ i5-12500H (18M Cache, up to 4.50 GHz), 16GB DDR4, 512GB SSD, GeForce RTX 3050 4GB, No OS, Mecha Gray (
+                    <Discount>9% reducere</Discount>
+                    ) 
+                </OfferDescription>
+            </a>
+        </OfferItem>
+
+        <OfferItem>
+        <a href='/zmeu'>
+                <OfferImage src={require('../Poze/asusVivabook.jpg')} alt="PC ZMEU" />
+                <OfferDescription>
+                    <Price>PRET: 1698,99 RON</Price>
+                    Laptop ASUS 15.6'' Vivobook Go 15 E1504FA, FHD, Procesor AMD Ryzen™ 5 7520U (4M Cache, up to 4.3 GHz), 8GB DDR5, 512GB SSD, Radeon 610M, No OS, Mixed Black(
+                    <Discount>12% reducere</Discount>
+                    ) 
+                </OfferDescription>
+            </a>
+        </OfferItem>
+        <OfferItem>
+        <a href='/zmeu'>
+                <OfferImage src={require('../Poze/ps5Bun.jpg')} alt="PC ZMEU" />
+                <OfferDescription>
+                    <Price>PRET: 2699,99 RON</Price>
+                    Consola Sony PlayStation 5 Slim Disk Edition 1TB White(
+                    <Discount>5% reducere</Discount>
+                    ) 
+                </OfferDescription>
+            </a>
+        </OfferItem>
+        
+        
+        
+    </OfferItemsContainer>
             
         </Container>
     );
