@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Menu from './Menu';
-import pcZmeu from './pcZmeu';
+import Zmeu from './pcZmeu';
 const StyledButton = styled.button`
     background-color: #4CAF50;
     border: none;
@@ -167,7 +167,7 @@ export default function Home() {
             <OfferTitle>CELE MAI BUNE OFERTE</OfferTitle>
             <OfferItemContainer>
                 
-                <a href=''>
+                <a href='/zmeu'>
                 <OfferImage src={require('../Poze/pcZmeu.jpg')} alt="PC ZMEU" />
     <OfferDescription>
         <Price>PRET: 1499,99 RON</Price>
