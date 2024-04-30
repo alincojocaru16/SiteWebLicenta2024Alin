@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-
 const Navbar = styled.nav`
     width: 100%;
     height: 60px;
@@ -41,6 +40,7 @@ const Menu = () => {
             <MenuList>
                 <MenuItem>
                     <MenuLink to="/">Home</MenuLink>
+                
                 </MenuItem>
             </MenuList>
         </Navbar>
