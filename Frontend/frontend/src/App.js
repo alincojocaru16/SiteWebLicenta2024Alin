@@ -8,6 +8,8 @@ import Menu from './pages/Menu';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Zmeu from './pages/pcZmeu';
+import Login from './pages/Login';
+import Inregistrare from './pages/InregistrareCont';
 function App() {
   return (
     <div className="App"> 
@@ -16,7 +18,8 @@ function App() {
 
         <Route path='/' element={<Home></Home>}/>
         <Route path='/zmeu' element={<Zmeu />} />
-        
+        <Route path='/login' element={<Login />} />
+        <Route path='/register' element={<Inregistrare />} />
 
       </Routes>
 

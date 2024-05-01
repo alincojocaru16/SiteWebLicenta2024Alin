@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import Menu from './Menu';
 import Zmeu from './pcZmeu';
+import { Link } from 'react-router-dom'; // Importăm Link din React Router
+
 const StyledButton = styled.button`
     background-color: #4CAF50;
     border: none;
@@ -35,26 +37,6 @@ const Background = styled.div`
     height: calc(100% - 20px); /* Înălțimea Background-ului */
     background-color: #e6f0ff; /* Albastru deschis */
     z-index: -1; /* Asigură-te că este plasat sub butoane */
-`;
-
-const LogoContainer = styled.div`
-    position: absolute;
-    top: -40px; /* Ajustează poziția logo-ului mai sus */
-    left: 0;
-    width: 100px; /* Lățimea logo-ului */
-    height: 100px; /* Înălțimea logo-ului */
-    padding: 20px; /* Spațierea pentru logo */
-    box-sizing: border-box; /* Asigură că padding-ul nu afectează dimensiunea totală */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 160px; /* Înălțimea containerului logo-ului */
-    transform: scale(1.5); /* Efect de zoom la logo */
-`;
-
-const Logo = styled.img`
-    max-width: 100%;
-    max-height: 100%;
 `;
 
 const SearchBar = styled.div`
@@ -107,28 +89,6 @@ const OfferTitle = styled.h2`
     text-align: center; /* Aliniere text la centru */
 `;
 
-// const OfferItemContainerStanga = styled.div`
-//     position: relative;
-//     text-align: left;
-//     margin-right: 800px;
-//     margin-top:100px; /* Adaugă o margine de 20px în partea de sus */
-// `;
-// const OfferItemContainerMijloc = styled.div`
-//     position: relative;
-//     text-align: left;
-//     margin-left: 450px;
-   
-//     margin-top:-157px; /* Adaugă o margine de 20px în partea de sus */
-// `;
-
-// const OfferItemContainerDreapta = styled.div`
-//     position: relative;
-//     text-align: left;
-//     margin-left: 900px;
-   
-//     margin-top:-157px; /* Adaugă o margine de 20px în partea de sus */
-// `;
-
 const OfferImage = styled.img`
     width: 100px; /* Lățimea imaginii */
     height: auto; /* Înălțimea se ajustează automat pentru a menține proporțiile */
@@ -153,6 +113,7 @@ const Price = styled.p`
     margin: 0; /* Elimină marginile implicit adăugate de paragraf */
     margin-bottom: 5px; /* Spațiu între preț și descriere */
 `;
+
 const OfferItemsContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
@@ -173,20 +134,16 @@ const OfferItem = styled.div`
     }
 `;
 
-
-
 export default function Home() {
     return (
         <Container>
             <Menu />
             <ActionButtons>
-                <StyledButton id="login">Login</StyledButton>
-                <StyledButton id="register">Register</StyledButton>
+                {/* Folosim componente Link în loc de etichete <a> */}
+                <StyledButton as={Link} to="/login">Login</StyledButton>
+                <StyledButton as={Link} to="/register">Register</StyledButton>
             </ActionButtons>
             <Background />
-            <LogoContainer>
-                <Logo src={require('../Poze/logobun.png')} alt="Logo" />
-            </LogoContainer>
             <SearchBar>
                 <SearchInput type="text" placeholder="Caută produsul" />
                 <SearchButton>Caută</SearchButton>
@@ -202,7 +159,7 @@ export default function Home() {
             <RightImage src={require('../Poze/superOferta.png')} alt="Super Oferta" />
             <OfferTitle>CELE MAI BUNE OFERTE</OfferTitle>
             <OfferItemsContainer>
-        <OfferItem>
+                <OfferItem>
             <a href='/zmeu'>
                 <OfferImage src={require('../Poze/pcZmeu.jpg')} alt="PC ZMEU" />
                 <OfferDescription>
@@ -270,11 +227,8 @@ export default function Home() {
                 </OfferDescription>
             </a>
         </OfferItem>
-        
-        
-        
-    </OfferItemsContainer>
-            
+                
+            </OfferItemsContainer>
         </Container>
     );
 }

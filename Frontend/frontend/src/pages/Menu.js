@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import logoImage from '../Poze/logobun.png';
 const Navbar = styled.nav`
     width: 100%;
     height: 60px;
@@ -33,10 +34,26 @@ const MenuLink = styled(Link)`
         color: lightgray;
     }
 `;
+const LogoContainer = styled.div`
+    position: absolute;
+    top: -100px; /* Ajustează poziția logo-ului */
+    left: 10px; /* Ajustează poziția logo-ului */
+    width: 100px; /* Lățimea logo-ului */
+    height: 100px; /* Înălțimea logo-ului */
+`;
+
+const LogoImage = styled.img`
+    width: 100%;
+    height: 100%;
+`;
 
 const Menu = () => {
     return (
+        
         <Navbar>
+            <LogoContainer>
+            <LogoImage src={logoImage} alt="Logo" />
+        </LogoContainer>
             <MenuList>
                 <MenuItem>
                     <MenuLink to="/">Home</MenuLink>
