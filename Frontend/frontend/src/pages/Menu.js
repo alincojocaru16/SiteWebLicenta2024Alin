@@ -2,6 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import logoImage from '../Poze/logobun.png';
+import Calculatoare from './Calculatoare';
+import Console from './Console';
+import Laptop from './Laptopuri';
+import Componente from './ComponentePc';
 const Navbar = styled.nav`
     width: 100%;
     height: 60px;
@@ -55,10 +59,27 @@ const Menu = () => {
             <LogoImage src={logoImage} alt="Logo" />
         </LogoContainer>
             <MenuList>
+            <MenuItem>
+                    <MenuLink to="/calculatoare">PC Gaming</MenuLink>
+                
+                </MenuItem>
+                <MenuItem>
+                    <MenuLink to="/laptop">Laptop</MenuLink>
+                
+                </MenuItem>
                 <MenuItem>
                     <MenuLink to="/">Home</MenuLink>
                 
                 </MenuItem>
+                <MenuItem>
+                    <MenuLink to="/console">Console</MenuLink>
+                
+                </MenuItem>
+                <MenuItem>
+                    <MenuLink to="/componente">Componente</MenuLink>
+                
+                </MenuItem>
+                
             </MenuList>
         </Navbar>
     );

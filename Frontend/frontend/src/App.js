@@ -10,6 +10,10 @@ import styled from 'styled-components';
 import Zmeu from './pages/pcZmeu';
 import Login from './pages/Login';
 import Inregistrare from './pages/InregistrareCont';
+import Calculatoare from './pages/Calculatoare';
+import Console from './pages/Console';
+import Laptop from './pages/Laptopuri';
+import Componente from './pages/ComponentePc';
 function App() {
   return (
     <div className="App"> 
@@ -20,7 +24,10 @@ function App() {
         <Route path='/zmeu' element={<Zmeu />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Inregistrare />} />
-
+        <Route path='/calculatoare' element={<Calculatoare/>} />
+        <Route path='/console' element={<Console/>} />
+        <Route path='/laptop' element={<Laptop/>} />
+        <Route path='/componente' element={<Componente/>} />
       </Routes>
 
 
