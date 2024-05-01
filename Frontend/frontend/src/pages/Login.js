@@ -11,7 +11,7 @@ const Container = styled.div`
 `;
 
 const LoginForm = styled.form`
-  background-color: #fff;
+background-color: #007bff;
   padding: 50px;
   border-radius: 8px;
 `;
