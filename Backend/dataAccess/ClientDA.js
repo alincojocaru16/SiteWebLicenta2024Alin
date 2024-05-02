@@ -23,8 +23,16 @@ async function deleteClient(id){
 
     return await elem.destroy();
 }
+async function getClientByEmailAndPasswords() {
+    return await Client.findAll({
+        attributes: ['EmailClient', 'ParolaCont']
+    });
+}
+
+
 
 export {
+    getClientByEmailAndPasswords,
    createClient,
    getClient,
    deleteClient,

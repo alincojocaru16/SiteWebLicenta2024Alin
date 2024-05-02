@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import Menu from './Menu';
+
 const Container = styled.div`
-  background-color: #f0f5ff; /* Albastru deschis aproape de alb */
+  background-color: #f0f5ff;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -10,7 +11,7 @@ const Container = styled.div`
 `;
 
 const LoginForm = styled.form`
-background-color: #007bff;
+  background-color: #007bff;
   padding: 50px;
   border-radius: 8px;
 `;
@@ -33,34 +34,59 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
-const LogoContainer = styled.div`
-  position: absolute;
-  top: -40px;
-  left: 0;
-  width: 100px;
-  height: 100px;
-  padding: 20px;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 160px;
-  transform: scale(1.5);
-`;
-
 export default function Login() {
-  const handleLogin = (e) => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleLogin = async (e) => {
     e.preventDefault();
-    console.log('Utilizatorul a încercat să se autentifice!');
-    window.location.href = '/';
+    try {
+      // Apel către endpoint-ul de autentificare din backend
+      const response = await fetch('http://localhost:9000/api/client/login', {
+        method: 'POST', // Modificăm metoda către POST
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email, password }) // Trimiterea datelor în corpul cererii
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        console.log('data:', data);
+        if (data) {
+          console.log('Autentificare reușită!');
+          window.location.href = '/'; // Redirecționează către pagina de acasă
+        } else {
+          alert('Email sau parolă incorectă');
+        }
+      } else {
+        console.error('Eroare la autentificare:', response.statusText);
+        alert('Eroare la autentificare. Vă rugăm să verificați datele introduse.');
+      }
+    } catch (error) {
+      console.error('Eroare la autentificare:', error);
+      alert('Eroare la autentificare. Vă rugăm să încercați din nou mai târziu.');
+    }
   };
 
   return (
     <Container>
       <Menu />
       <LoginForm onSubmit={handleLogin}>
-        <Input type="email" placeholder="Email" required />
-        <Input type="password" placeholder="Parolă" required />
+        <Input
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+        <Input
+          type="password"
+          placeholder="Parolă"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
         <Button type="submit">Autentificare</Button>
       </LoginForm>
     </Container>

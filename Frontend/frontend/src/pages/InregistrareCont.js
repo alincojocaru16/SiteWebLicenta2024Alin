@@ -114,13 +114,15 @@ export default function Inregistrare() {
           onChange={handleInputChange}
           required
         />
-       <Input
-  type="text"
-  name="Adresa"
-  placeholder="Adresă"
-  value={formData.Adresa}
-  onChange={handleInputChange}
-/>
+        <Input
+        type="text"
+        name="Adresa"
+        placeholder="Adresă"
+        onChange={handleInputChange}
+        required
+        />
+
+
 
         <Input
           type="email"
