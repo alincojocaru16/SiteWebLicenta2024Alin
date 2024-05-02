@@ -5,8 +5,8 @@ import createDbRouter from './routes/crateDBRouter.js';
 import clientRoute from './routes/ClientRouter.js';
 import comandaRouter from './routes/ComandaRouter.js';
 import produseRouter from './routes/ProduseRouter.js';
-import conturiRouter from './routes/ConturiRouter.js';
 import stockRouter from './routes/StockProduseRouter.js';
+import cors from 'cors';
 env.config();
 
 let app = express();
@@ -16,12 +16,13 @@ app.use(express.urlencoded({
   extended: true
 }));
 DB_Init();
-
+app.use(cors({
+  origin: 'http://localhost:3000' // Specifică originile permise aici
+}));
 app.use("/api",createDbRouter);
 app.use("/api",clientRoute);
 app.use("/api",comandaRouter);
 app.use("/api",produseRouter);
-app.use("/api",conturiRouter);
 app.use("/api",stockRouter);
 
 

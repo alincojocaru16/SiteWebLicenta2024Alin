@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import Menu from './Menu';
-
 const Container = styled.div`
   background-color: #f0f5ff; /* Albastru deschis aproape de alb */
   height: 100vh;
@@ -53,7 +52,7 @@ export default function Login() {
   const handleLogin = (e) => {
     e.preventDefault();
     console.log('Utilizatorul a încercat să se autentifice!');
-    window.location.href = '/dashboard';
+    window.location.href = '/';
   };
 
   return (

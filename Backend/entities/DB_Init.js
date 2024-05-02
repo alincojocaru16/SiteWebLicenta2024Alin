@@ -3,14 +3,13 @@ import env from 'dotenv';
 import Client from './Client.js';
 import Comanda from './Comanda.js';
 import Produse from './Produse.js';
-import Conturi from './Conturi.js';
 import StockProduse from './StockProduse.js';
 env.config();
 
 function Create_DB(){
     let conn;
 
-    mysql.createConnection({
+    mysql.createConnection({ 
     user : process.env.DB_USERNAME,
     password : process.env.DB_PASSWORD
     })
@@ -32,8 +31,8 @@ function FK_Config(){
     })
     Comanda.belongsTo(Client, { foreignKey:"ClientId"})
 
-    Conturi.belongsTo(Client,{foreignKey:"ClientId"});
-    Client.belongsTo(Conturi,{foreignKey:"ContId"});
+    // Conturi.belongsTo(Client,{foreignKey:"ClientId"});
+    // Client.belongsTo(Conturi,{foreignKey:"ContId"});
 
 
     Produse.hasMany(StockProduse,{
