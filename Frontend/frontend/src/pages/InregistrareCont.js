@@ -1,18 +1,17 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-
 import Menu from './Menu';
 
 const Container = styled.div`
-  background-color: #f0f5ff; /* Culoare albastră */
-  height: 130vh; /* Înălțimea containerului pe întreaga înălțime a ecranului */
+  background-color: #f0f5ff;
+  height: 130vh;
   display: flex;
-  justify-content: center; /* Aliniere centrul orizontal */
-  align-items: center; /* Aliniere centru vertical */
+  justify-content: center;
+  align-items: center;
 `;
 
 const RegisterForm = styled.form`
-  background-color: #007bff; /* Fundal albastru pentru formular */
+  background-color: #007bff;
   padding: 60px;
   border-radius: 8px;
 `;
@@ -53,41 +52,29 @@ export default function Inregistrare() {
     const { name, value } = e.target;
     setFormData((prevData) => ({
       ...prevData,
-      [name]: value.trim() // Utilizează metoda trim() pentru a elimina spațiile goale de la început și sfârșit
+      [name]: value.trim()
     }));
-    console.log('Input changed:', name, value); // Adăugare console.log pentru a afișa schimbările în valorile câmpurilor de intrare
   };
 
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      // Salvarea datelor într-o variabilă
       const dataToSave = { ...formData };
-      console.log('Data to save:', dataToSave); // Adăugare console.log pentru a afișa datele trimise către backend
-
-      // Trimiterea datelor către backend
       const response = await fetch('http://localhost:9000/api/client', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify(dataToSave) // Trimiterea datelor salvate în variabilă
+        body: JSON.stringify(dataToSave)
       });
-      
-      console.log('Response:', response); // Adăugare console.log pentru a afișa răspunsul de la server
 
       if (response.ok) {
-        console.log('Utilizatorul a fost înregistrat cu succes!');
-        window.location.href = '/'; // Redirecționare către pagina principală după înregistrare
+        window.location.href = '/';
       } else {
         const errorMessage = await response.text();
-        console.error('Eroare la înregistrare:', errorMessage);
-        // Afișează un mesaj de eroare în interfața utilizatorului
         alert('Eroare la înregistrare: ' + errorMessage);
       }
     } catch (error) {
-      console.error('Eroare la înregistrare:', error);
-      // Afișează un mesaj de eroare în interfața utilizatorului
       alert('Eroare la înregistrare: ' + error.message);
     }
   };
@@ -115,15 +102,12 @@ export default function Inregistrare() {
           required
         />
         <Input
-        type="text"
-        name="Adresa"
-        placeholder="Adresă"
-        onChange={handleInputChange}
-        required
+          type="text"
+          name="Adresa"
+          placeholder="Adresă"
+          onChange={handleInputChange}
+          required
         />
-
-
-
         <Input
           type="email"
           name="EmailClient"
@@ -142,19 +126,19 @@ export default function Inregistrare() {
         />
         <PasswordInput
           type="password"
-          name="ParolaCont" // Schimbat de la "Parola" la "ParolaCont"
+          name="ParolaCont"
           placeholder="Parolă"
-          value={formData.ParolaCont} // Schimbat de la "Parola" la "ParolaCont"
+          value={formData.ParolaCont}
           onChange={handleInputChange}
           required
-        /> 
+        />
         <Input
           type="text"
-          value={formData.ParolaCont} // Schimbat de la "Parola" la "ParolaCont"
+          value={formData.ParolaCont}
           style={{ display: 'none' }}
           disabled
         />
-        <Button type="submit">Register</Button>
+        <Button type="submit">Înregistrare</Button>
       </RegisterForm>
     </Container>
   );
