@@ -14,6 +14,7 @@ import Calculatoare from './pages/Calculatoare';
 import Console from './pages/Console';
 import Laptop from './pages/Laptopuri';
 import Componente from './pages/ComponentePc';
+import HomeClient from './pages/HomeClient';
 function App() {
   return (
     <div className="App"> 
@@ -28,6 +29,7 @@ function App() {
         <Route path='/console' element={<Console/>} />
         <Route path='/laptop' element={<Laptop/>} />
         <Route path='/componente' element={<Componente/>} />
+        <Route path='/homeclient' element={<HomeClient/>} />
       </Routes>
 
 
