@@ -1,4 +1,3 @@
-// Login.js
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import Menu from './Menu';
@@ -56,10 +55,7 @@ export default function Login() {
 
       if (response.ok) {
         const userData = await response.json();
-        console.log('userData:', userData);
         if (userData && userData.length > 0) {
-          console.log('Autentificare reușită!');
-          // Găsim utilizatorul conectat din array-ul userData
           const loggedInUser = userData.find(user => user.EmailClient === email);
           setUserData(loggedInUser);
           setIsLoggedIn(true);
@@ -67,18 +63,16 @@ export default function Login() {
           setError('Email sau parolă incorectă');
         }
       } else {
-        console.error('Eroare la autentificare:', response.statusText);
         setError('Eroare la autentificare. Vă rugăm să verificați datele introduse.');
       }
     } catch (error) {
-      console.error('Eroare la autentificare:', error);
       setError('Eroare la autentificare. Vă rugăm să încercați din nou mai târziu.');
     }
   };
 
   return (
     <Container>
-        <Menu></Menu>
+      <Menu />
       {!isLoggedIn ? (
         <LoginForm onSubmit={handleLogin}>
           <Input
