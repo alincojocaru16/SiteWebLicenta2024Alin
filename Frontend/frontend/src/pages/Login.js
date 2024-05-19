@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // Importă hook-ul useNavigate
 import styled from 'styled-components';
 import Menu from './Menu';
 
@@ -32,46 +33,27 @@ const Button = styled.button`
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  margin-bottom: 10px;
-  margin-top: 10px;
-  margin-right: 5px;
+  margin-right: 10px; /* Adaugă spațiu între butoane */
 `;
 
-const RegisterButton = styled(Button)`
-  background-color: #007bff;
-`;
-
-const ModalOverlay = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: ${props => (props.visible ? 'block' : 'none')};
-`;
-
-const ModalContent = styled.div`
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  padding: 20px;
-  border-radius: 8px;
-  display: ${props => (props.visible ? 'block' : 'none')};
+const RegisterButton = styled.button`
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 `;
 
 const ErrorMessage = styled.p`
   color: red;
-  margin-bottom: 10px;
 `;
 
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
-  const [showModal, setShowModal] = useState(false);
+  const navigate = useNavigate(); // Hook pentru navigare
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -86,29 +68,23 @@ export default function Login() {
 
       if (response.ok) {
         const userData = await response.json();
-        if (userData && userData.length > 0) {
-          const loggedInUser = userData.find(user => user.EmailClient === email);
-          console.log(`Bine ai venit, ${loggedInUser.NumeClient}!`);
+        const loggedInUser = userData.find(user => user.EmailClient === email && user.ParolaCont === password);
+
+        if (loggedInUser) {
+          navigate('/homeClient', { state: { userData: loggedInUser } });
         } else {
           setError('Email sau parolă incorectă');
-          setShowModal(true);
         }
       } else {
-        setError('Eroare la autentificare. Vă rugăm să verificați datele introduse.');
-        setShowModal(true);
+        setError('Email sau parolă incorectă');
       }
     } catch (error) {
       setError('Eroare la autentificare. Vă rugăm să încercați din nou mai târziu.');
-      setShowModal(true);
     }
   };
 
-  const handleRedirectToRegister = () => {
-    window.location.href = 'http://localhost:3000/register';
-  };
-
-  const handleCloseModal = () => {
-    setShowModal(false);
+  const handleRegisterRedirect = () => {
+    navigate('/register'); // Redirecționează către pagina de înregistrare
   };
 
   return (
@@ -129,14 +105,12 @@ export default function Login() {
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-        {error && <ErrorMessage>{error}</ErrorMessage>}
         <Button type="submit">Autentificare</Button>
-        <RegisterButton type="button" onClick={handleRedirectToRegister}>Înregistrare</RegisterButton>
+        <RegisterButton type="button" onClick={handleRegisterRedirect}>
+          Înregistrare
+        </RegisterButton>
+        {error && <ErrorMessage>{error}</ErrorMessage>}
       </LoginForm>
-      <ModalOverlay visible={showModal} onClick={handleCloseModal} />
-      <ModalContent visible={showModal}>
-       
-      </ModalContent>
     </Container>
   );
 }

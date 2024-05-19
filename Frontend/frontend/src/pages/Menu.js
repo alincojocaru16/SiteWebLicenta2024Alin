@@ -8,9 +8,9 @@ import Laptop from './Laptopuri';
 import Componente from './ComponentePc';
 const Navbar = styled.nav`
     width: 100%;
-    height: 60px;
+    height: 40px;
     position: absolute;
-    top: 80px; /* Ajustăm această valoare pentru a poziționa meniul sub butoane */
+    top: 100px; /* Ajustăm această valoare pentru a poziționa meniul sub butoane */
     background-color: rgba(0, 0, 0, 0.5); /* Fundal transparent */
     display: flex;
     justify-content: center; /* Aliniere orizontală la centru */
@@ -37,18 +37,21 @@ const MenuLink = styled(Link)`
     &:hover {
         color: lightgray;
     }
+    
 `;
 const LogoContainer = styled.div`
     position: absolute;
-    top: -100px; /* Ajustează poziția logo-ului */
+    top: -130px; /* Ajustează poziția logo-ului */
     left: 10px; /* Ajustează poziția logo-ului */
     width: 100px; /* Lățimea logo-ului */
     height: 100px; /* Înălțimea logo-ului */
+    
 `;
 
 const LogoImage = styled.img`
     width: 100%;
     height: 100%;
+    
 `;
 
 const Menu = () => {
