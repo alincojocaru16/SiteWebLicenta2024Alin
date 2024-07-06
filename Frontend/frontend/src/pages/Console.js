@@ -97,50 +97,7 @@ export default function Console(){
                 </OfferDescription>
             </a>
         </OfferItem>
-        <OfferItem>
-        <a href='/zmeu'>
-                <OfferImage src={require('../Poze/ps5Bun.jpg')} alt="PC ZMEU" />
-                <OfferDescription>
-                    <Price>PRET: 2699,99 RON</Price>
-                    Consola Sony PlayStation 5 Slim Disk Edition 1TB White(
-                    <Discount>5% reducere</Discount>
-                    ) 
-                </OfferDescription>
-            </a>
-        </OfferItem>
-        <OfferItem>
-        <a href='/zmeu'>
-                <OfferImage src={require('../Poze/ps5Bun.jpg')} alt="PC ZMEU" />
-                <OfferDescription>
-                    <Price>PRET: 2699,99 RON</Price>
-                    Consola Sony PlayStation 5 Slim Disk Edition 1TB White(
-                    <Discount>5% reducere</Discount>
-                    ) 
-                </OfferDescription>
-            </a>
-        </OfferItem>
-        <OfferItem>
-        <a href='/zmeu'>
-                <OfferImage src={require('../Poze/ps5Bun.jpg')} alt="PC ZMEU" />
-                <OfferDescription>
-                    <Price>PRET: 2699,99 RON</Price>
-                    Consola Sony PlayStation 5 Slim Disk Edition 1TB White(
-                    <Discount>5% reducere</Discount>
-                    ) 
-                </OfferDescription>
-            </a>
-        </OfferItem>
-        <OfferItem>
-        <a href='/zmeu'>
-                <OfferImage src={require('../Poze/ps5Bun.jpg')} alt="PC ZMEU" />
-                <OfferDescription>
-                    <Price>PRET: 2699,99 RON</Price>
-                    Consola Sony PlayStation 5 Slim Disk Edition 1TB White(
-                    <Discount>5% reducere</Discount>
-                    ) 
-                </OfferDescription>
-            </a>
-        </OfferItem>
+       
 
         
             </OfferItemsContainer>

@@ -69,7 +69,7 @@ const SearchButton = styled.button`
 const LeftImage = styled.img`
     position: absolute;
     top: 25%;
-    left: 25%;
+    left: 20%;
     transform: translate(-50%, -50%);
     max-height: 80px; /* Setează o înălțime maximă pentru imagine */
 `;
@@ -159,7 +159,6 @@ export default function Home() {
             <Menu />
             <ActionButtons>
                 <Link to='/cart'>Cosul meu</Link>
-                {/* Folosim componente Link în loc de etichete <a> */}
                 <StyledButton as={Link} to="/login">Login</StyledButton>
                 <StyledButton as={Link} to="/register">Register</StyledButton>
             </ActionButtons>

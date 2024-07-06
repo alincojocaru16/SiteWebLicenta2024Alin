@@ -31,8 +31,7 @@ function FK_Config(){
     })
     Comanda.belongsTo(Client, { foreignKey:"ClientId"})
 
-    // Conturi.belongsTo(Client,{foreignKey:"ClientId"});
-    // Client.belongsTo(Conturi,{foreignKey:"ContId"});
+   
 
 
     Produse.hasMany(StockProduse,{

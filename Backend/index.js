@@ -17,7 +17,7 @@ app.use(express.urlencoded({
 }));
 DB_Init();
 app.use(cors({
-  origin: 'http://localhost:3000' // Specifică originile permise aici
+  origin: 'http://localhost:3000'
 }));
 app.use("/api",createDbRouter);
 app.use("/api",clientRoute);

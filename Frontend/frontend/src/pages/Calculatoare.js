@@ -84,11 +84,11 @@ export default function Calculatoare(){
         </OfferItem>
         <OfferItem>
             <a href='/zmeu'>
-                <OfferImage src={require('../Poze/pcBlue.jpg')} alt="PC ZMEU" />
+                <OfferImage src={require('../Poze/pc1.jpg')} alt="PC ZMEU" />
                 <OfferDescription>
-                    <Price>PRET: 5398,99 RON</Price>
-                    PC Gaming Blue Legendar Ultra, Intel i5-13400F 2.5GHz, 32GB DDR4, 1TB SSD, RTX 4060 8GB GDDR6, Illuminare RGB (
-                    <Discount>15% reducere</Discount>
+                    <Price>PRET: 3989,99 RON</Price>
+                    PC Gaming BALAUR Legendar powered by GIGABYTE, Intel i5-12400F 2.5GHz, 32GB DDR4, 1TB SSD, RTX 4060 8GB GDDR6, Iluminare RGB (
+                   
                     ) 
                 </OfferDescription>
             </a>
@@ -96,11 +96,11 @@ export default function Calculatoare(){
 
         <OfferItem>
         <a href='/zmeu'>
-                <OfferImage src={require('../Poze/pcWhite.jpg')} alt="PC ZMEU" />
+                <OfferImage src={require('../Poze/pc2.jpg')} alt="PC ZMEU" />
                 <OfferDescription>
-                    <Price>PRET: 3699,99 RON</Price>
-                    PC Gaming  Legendar White Hyper, Intel i5-12400F 2.5GHz, 16GB DDR5, 1TB SSD, RTX 3050 8GB GDDR6, Iluminare RGB (
-                    <Discount>5% reducere</Discount>
+                    <Price>PRET: 2555.55 RON</Price>
+                    PC Gaming ZMEU Extra, Intel i5-10400F 2.9GHz, 8GB DDR4, 500GB SSD, GTX 1650 4GB GDDR6, Iluminare RGB (
+                   
                     ) 
                 </OfferDescription>
             </a>
@@ -112,11 +112,11 @@ export default function Calculatoare(){
 
         <OfferItem>
             <a href='/zmeu'>
-                <OfferImage src={require('../Poze/pcZmeu.jpg')} alt="PC ZMEU" />
+                <OfferImage src={require('../Poze/pc3.jpg')} alt="PC ZMEU" />
                 <OfferDescription>
-                    <Price>PRET: 1499,99 RON</Price>
-                    PC Gaming ZMEU Max, AMD Ryzen 3 3200G 3.6GHz, 8GB DDR4, 1TB SSD, AMD Radeon Vega 8, Iluminare RGB (
-                    <Discount>25% reducere</Discount>
+                    <Price>PRET: 14569,99 RON</Price>
+                    PC Gaming GREUCEANU Legendar Extra, AMD Ryzen 9 7900X 4.7GHz, 64GB DDR5, 2TB SSD, RTX 4080 SUPER 16GB GDDR6X(
+                   
                     ) 
                 </OfferDescription>
             </a>
