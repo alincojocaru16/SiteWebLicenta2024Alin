@@ -1,7 +1,7 @@
-// src/pages/pcZmeu.js
+// src/pages/Xbox.js
 import React, { useContext } from 'react';
 import styled from 'styled-components';
-import { CartContext } from './CartContext'; // Ensure the correct path
+import { CartContext } from './CartContext';
 import { useNavigate } from 'react-router-dom';
 
 const Container = styled.div`
@@ -82,31 +82,29 @@ const AddToCartButton = styled.button`
   }
 `;
 
-const Zmeu = () => {
+const Xbox = () => {
   const { addToCart } = useContext(CartContext);
   const navigate = useNavigate();
 
   const handleAddToCart = () => {
     const item = {
-      title: "PC Gaming ZMEU Max",
-      price: "1499,99 RON",
-      image: require('../Poze/pcZmeu.jpg')
+      title: "Consola Microsoft Xbox Series S 512GB White",
+      price: "1.379,99 RON",
+      image: require('../Poze/xbox.jpg')
     };
     addToCart(item);
-    navigate('/cart'); // Navigate to the cart page
+    navigate('/cart');
   };
 
   return (
     <Container>
       <OfferItem>
-        <OfferImage src={require('../Poze/pcZmeu.jpg')} alt="PC ZMEU" />
+        <OfferImage src={require('../Poze/xbox.jpg')} alt="Xbox" />
         <OfferDetails>
-          <OfferTitle>PC Gaming Blue Legendar Ultra</OfferTitle>
-          <Price>PRET: 1499,99 RON</Price>
+          <OfferTitle>Consola Microsoft Xbox Series S 512GB White</OfferTitle>
+          <Price>PRET: 1.379,99 RON</Price>
           <OfferDescription>
-          PC Gaming ZMEU Max, AMD Ryzen 3 3200G 3.6GHz, 8GB DDR4, 1TB SSD, AMD Radeon Vega 8, Iluminare RGB (
-            <Discount>25% reducere</Discount>
-            )
+            Consola Microsoft Xbox Series S 512GB White
           </OfferDescription>
           <AddToCartButton onClick={handleAddToCart}>Adauga in cos</AddToCartButton>
         </OfferDetails>
@@ -115,4 +113,4 @@ const Zmeu = () => {
   );
 };
 
-export default Zmeu;
+export default Xbox;

@@ -83,7 +83,7 @@ export default function Calculatoare(){
             </a>
         </OfferItem>
         <OfferItem>
-            <a href='/zmeu'>
+            <a href='/PcBalaur'>
                 <OfferImage src={require('../Poze/pc1.jpg')} alt="PC ZMEU" />
                 <OfferDescription>
                     <Price>PRET: 3989,99 RON</Price>
@@ -95,7 +95,7 @@ export default function Calculatoare(){
         </OfferItem>
 
         <OfferItem>
-        <a href='/zmeu'>
+        <a href='/PcZmeuExtra'>
                 <OfferImage src={require('../Poze/pc2.jpg')} alt="PC ZMEU" />
                 <OfferDescription>
                     <Price>PRET: 2555.55 RON</Price>
@@ -111,7 +111,7 @@ export default function Calculatoare(){
         </OfferItem>
 
         <OfferItem>
-            <a href='/zmeu'>
+            <a href='/PcGreuceanu'>
                 <OfferImage src={require('../Poze/pc3.jpg')} alt="PC ZMEU" />
                 <OfferDescription>
                     <Price>PRET: 14569,99 RON</Price>
@@ -122,7 +122,7 @@ export default function Calculatoare(){
             </a>
         </OfferItem>
         <OfferItem>
-            <a href='/zmeu'>
+            <a href='/PcBlue'>
                 <OfferImage src={require('../Poze/pcBlue.jpg')} alt="PC ZMEU" />
                 <OfferDescription>
                     <Price>PRET: 5398,99 RON</Price>
@@ -134,7 +134,7 @@ export default function Calculatoare(){
         </OfferItem>
 
         <OfferItem>
-        <a href='/zmeu'>
+        <a href='/PcWhite'>
                 <OfferImage src={require('../Poze/pcWhite.jpg')} alt="PC ZMEU" />
                 <OfferDescription>
                     <Price>PRET: 3699,99 RON</Price>

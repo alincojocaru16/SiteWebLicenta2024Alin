@@ -1,7 +1,7 @@
-// src/pages/pcZmeu.js
+// src/pages/PcBalaur.js
 import React, { useContext } from 'react';
 import styled from 'styled-components';
-import { CartContext } from './CartContext'; // Ensure the correct path
+import { CartContext } from './CartContext';
 import { useNavigate } from 'react-router-dom';
 
 const Container = styled.div`
@@ -82,31 +82,29 @@ const AddToCartButton = styled.button`
   }
 `;
 
-const Zmeu = () => {
+const PcBalaur = () => {
   const { addToCart } = useContext(CartContext);
   const navigate = useNavigate();
 
   const handleAddToCart = () => {
     const item = {
-      title: "PC Gaming ZMEU Max",
-      price: "1499,99 RON",
-      image: require('../Poze/pcZmeu.jpg')
+      title: "PC Gaming BALAUR Legendar powered by GIGABYTE",
+      price: "3989,99 RON",
+      image: require('../Poze/pc1.jpg')
     };
     addToCart(item);
-    navigate('/cart'); // Navigate to the cart page
+    navigate('/cart');
   };
 
   return (
     <Container>
       <OfferItem>
-        <OfferImage src={require('../Poze/pcZmeu.jpg')} alt="PC ZMEU" />
+        <OfferImage src={require('../Poze/pc1.jpg')} alt="PC Gaming BALAUR Legendar powered by GIGABYTE" />
         <OfferDetails>
-          <OfferTitle>PC Gaming Blue Legendar Ultra</OfferTitle>
-          <Price>PRET: 1499,99 RON</Price>
+          <OfferTitle>PC Gaming BALAUR Legendar powered by GIGABYTE</OfferTitle>
+          <Price>PRET: 3989,99 RON</Price>
           <OfferDescription>
-          PC Gaming ZMEU Max, AMD Ryzen 3 3200G 3.6GHz, 8GB DDR4, 1TB SSD, AMD Radeon Vega 8, Iluminare RGB (
-            <Discount>25% reducere</Discount>
-            )
+            PC Gaming BALAUR Legendar powered by GIGABYTE, Intel i5-12400F 2.5GHz, 32GB DDR4, 1TB SSD, RTX 4060 8GB GDDR6, Iluminare RGB
           </OfferDescription>
           <AddToCartButton onClick={handleAddToCart}>Adauga in cos</AddToCartButton>
         </OfferDetails>
@@ -115,4 +113,4 @@ const Zmeu = () => {
   );
 };
 
-export default Zmeu;
+export default PcBalaur;

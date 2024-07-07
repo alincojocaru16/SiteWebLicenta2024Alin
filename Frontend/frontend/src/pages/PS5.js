@@ -1,7 +1,7 @@
-// src/pages/pcZmeu.js
+// src/pages/PS5.js
 import React, { useContext } from 'react';
 import styled from 'styled-components';
-import { CartContext } from './CartContext'; // Ensure the correct path
+import { CartContext } from './CartContext';
 import { useNavigate } from 'react-router-dom';
 
 const Container = styled.div`
@@ -82,30 +82,30 @@ const AddToCartButton = styled.button`
   }
 `;
 
-const Zmeu = () => {
+const PS5 = () => {
   const { addToCart } = useContext(CartContext);
   const navigate = useNavigate();
 
   const handleAddToCart = () => {
     const item = {
-      title: "PC Gaming ZMEU Max",
-      price: "1499,99 RON",
-      image: require('../Poze/pcZmeu.jpg')
+      title: "Consola Sony PlayStation 5 Slim Disk Edition 1TB White",
+      price: "2699,99 RON",
+      image: require('../Poze/ps5Bun.jpg')
     };
     addToCart(item);
-    navigate('/cart'); // Navigate to the cart page
+    navigate('/cart');
   };
 
   return (
     <Container>
       <OfferItem>
-        <OfferImage src={require('../Poze/pcZmeu.jpg')} alt="PC ZMEU" />
+        <OfferImage src={require('../Poze/ps5Bun.jpg')} alt="PS5" />
         <OfferDetails>
-          <OfferTitle>PC Gaming Blue Legendar Ultra</OfferTitle>
-          <Price>PRET: 1499,99 RON</Price>
+          <OfferTitle>Consola Sony PlayStation 5 Slim Disk Edition 1TB White</OfferTitle>
+          <Price>PRET: 2699,99 RON</Price>
           <OfferDescription>
-          PC Gaming ZMEU Max, AMD Ryzen 3 3200G 3.6GHz, 8GB DDR4, 1TB SSD, AMD Radeon Vega 8, Iluminare RGB (
-            <Discount>25% reducere</Discount>
+            Consola Sony PlayStation 5 Slim Disk Edition 1TB White (
+            <Discount>5% reducere</Discount>
             )
           </OfferDescription>
           <AddToCartButton onClick={handleAddToCart}>Adauga in cos</AddToCartButton>
@@ -115,4 +115,4 @@ const Zmeu = () => {
   );
 };
 
-export default Zmeu;
+export default PS5;

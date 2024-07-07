@@ -1,7 +1,7 @@
-// src/pages/pcZmeu.js
+// src/pages/pcBlue.js
 import React, { useContext } from 'react';
 import styled from 'styled-components';
-import { CartContext } from './CartContext'; // Make sure the import path is correct
+import { CartContext } from './CartContext'; // Ensure the correct path
 import { useNavigate } from 'react-router-dom';
 
 const Container = styled.div`
@@ -89,8 +89,8 @@ const PcBlue = () => {
   const handleAddToCart = () => {
     const item = {
       title: "PC Gaming Blue Legendar Ultra",
-      price: "5398,99 RON",
-      image: require('../Poze/pcBlue.jpg').default
+      price: "1499,99 RON",
+      image: require('../Poze/pcBlue.jpg')
     };
     addToCart(item);
     navigate('/cart'); // Navigate to the cart page
@@ -99,13 +99,13 @@ const PcBlue = () => {
   return (
     <Container>
       <OfferItem>
-        <OfferImage src={require('../Poze/pcBlue.jpg').default} alt="PC ZMEU" />
+        <OfferImage src={require('../Poze/pcBlue.jpg')} alt="PC Blue" />
         <OfferDetails>
           <OfferTitle>PC Gaming Blue Legendar Ultra</OfferTitle>
-          <Price>PRET: 5398,99 RON</Price>
+          <Price>PRET: 1499,99 RON</Price>
           <OfferDescription>
             PC Gaming Blue Legendar Ultra, Intel i5-13400F 2.5GHz, 32GB DDR4, 1TB SSD, RTX 4060 8GB GDDR6, Illuminare RGB (
-            <Discount>15% reducere</Discount>
+            <Discount>25% reducere</Discount>
             )
           </OfferDescription>
           <AddToCartButton onClick={handleAddToCart}>Adauga in cos</AddToCartButton>

@@ -4,12 +4,12 @@ import Menu from './Menu';
 import Zmeu from './pcZmeu';
 import { Link } from 'react-router-dom';
 
-// Definirea stilurilor pentru containerul principal
 const Container = styled.div`
     position: relative;
-    background-color: #f0f5ff; /* Culoare de fundal pentru container */
+    background-color: #e6f0ff; /* Culoare de fundal pentru container */
     padding: 20px; /* Padding pentru a separa conținutul de marginea containerului */
     overflow-x: hidden; /* Dezactivare derulare orizontală */
+    min-height: 100vh; /* Asigură că fundalul acoperă întreaga înălțime a paginii */
 `;
 
 const OfferItemsContainer = styled.div`
@@ -28,6 +28,10 @@ const OfferItem = styled.div`
     border-radius: 8px; /* Colțuri rotunjite */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Umbra pentru efect de adâncime */
     transition: transform 0.3s ease; /* Tranziție pentru efect de hover */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrare pe orizontală */
+    text-align: center; /* Aliniere text */
     &:hover {
         transform: translateY(-5px); /* Efect de ridicare la hover */
     }
@@ -51,7 +55,6 @@ const OfferDescription = styled.p`
     }
 `;
 
-
 const Price = styled.p`
     font-size: 18px; /* Setează dimensiunea textului pentru preț */
     font-weight: bold; /* Face textul bold */
@@ -64,7 +67,6 @@ const Discount = styled.span`
 `;
 
 
-
 export default function Componente(){
     return (
         <Container> {/* Folosim noul container pentru a înfășura conținutul */}
@@ -73,62 +75,37 @@ export default function Componente(){
             <Menu></Menu>
            
             <OfferItem>
-        <a href='/zmeu'>
+        <a href='/PlacaVideo'>
                 <OfferImage src={require('../Poze/placaGeForceRTX4060.jpg')} alt="PC ZMEU" />
                 <OfferDescription>
                     <Price>PRET: 2699,99 RON</Price>
                     Placa video GIGABYTE GeForce RTX 4060 EAGLE OC 8GB GDDR6 128-bit DLSS 3.0(
                     <Discount>5% reducere</Discount>
                     ) 
+                </OfferDescription>
+            </a>
+        </OfferItem>
+        <OfferItem>
+        <a href='/ProcesorIntel'>
+                <OfferImage src={require('../Poze/procesorI5.jpg')} alt="PC ZMEU" />
+                <OfferDescription>
+                    <Price>PRET: 503,62 RON</Price>
+                    Procesor Intel Rocket Lake, Core i5 11400 2.6GHz box
                 </OfferDescription>
             </a>
         </OfferItem>
 
+        <OfferItem>
+        <a href='/SursaSegotep'>
+                <OfferImage src={require('../Poze/sursa.jpg')} alt="PC ZMEU" />
+                <OfferDescription>
+                    <Price>PRET: 284,99 RON</Price>
+                    Sursa Segotep GP Series 500W, 80 PLUS GOLD
+                </OfferDescription>
+            </a>
+        </OfferItem>
         
-        <OfferItem>
-        <a href='/zmeu'>
-                <OfferImage src={require('../Poze/placaGeForceRTX4060.jpg')} alt="PC ZMEU" />
-                <OfferDescription>
-                    <Price>PRET: 2699,99 RON</Price>
-                    Placa video GIGABYTE GeForce RTX 4060 EAGLE OC 8GB GDDR6 128-bit DLSS 3.0(
-                    <Discount>5% reducere</Discount>
-                    ) 
-                </OfferDescription>
-            </a>
-        </OfferItem>
-        <OfferItem>
-        <a href='/zmeu'>
-                <OfferImage src={require('../Poze/placaGeForceRTX4060.jpg')} alt="PC ZMEU" />
-                <OfferDescription>
-                    <Price>PRET: 2699,99 RON</Price>
-                    Placa video GIGABYTE GeForce RTX 4060 EAGLE OC 8GB GDDR6 128-bit DLSS 3.0(
-                    <Discount>5% reducere</Discount>
-                    ) 
-                </OfferDescription>
-            </a>
-        </OfferItem>
-        <OfferItem>
-        <a href='/zmeu'>
-                <OfferImage src={require('../Poze/placaGeForceRTX4060.jpg')} alt="PC ZMEU" />
-                <OfferDescription>
-                    <Price>PRET: 2699,99 RON</Price>
-                    Placa video GIGABYTE GeForce RTX 4060 EAGLE OC 8GB GDDR6 128-bit DLSS 3.0(
-                    <Discount>5% reducere</Discount>
-                    ) 
-                </OfferDescription>
-            </a>
-        </OfferItem>
-        <OfferItem>
-        <a href='/zmeu'>
-                <OfferImage src={require('../Poze/placaGeForceRTX4060.jpg')} alt="PC ZMEU" />
-                <OfferDescription>
-                    <Price>PRET: 2699,99 RON</Price>
-                    Placa video GIGABYTE GeForce RTX 4060 EAGLE OC 8GB GDDR6 128-bit DLSS 3.0(
-                    <Discount>5% reducere</Discount>
-                    ) 
-                </OfferDescription>
-            </a>
-        </OfferItem>
+        
 
 
         

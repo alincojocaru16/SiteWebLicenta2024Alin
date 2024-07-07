@@ -1,7 +1,7 @@
-// src/pages/pcZmeu.js
+// src/pages/AsusVivo.js
 import React, { useContext } from 'react';
 import styled from 'styled-components';
-import { CartContext } from './CartContext'; // Ensure the correct path
+import { CartContext } from './CartContext';
 import { useNavigate } from 'react-router-dom';
 
 const Container = styled.div`
@@ -82,30 +82,30 @@ const AddToCartButton = styled.button`
   }
 `;
 
-const Zmeu = () => {
+const AsusVivo = () => {
   const { addToCart } = useContext(CartContext);
   const navigate = useNavigate();
 
   const handleAddToCart = () => {
     const item = {
-      title: "PC Gaming ZMEU Max",
-      price: "1499,99 RON",
-      image: require('../Poze/pcZmeu.jpg')
+      title: "Laptop ASUS 15.6'' Vivobook Go 15 E1504FA",
+      price: "1698,99 RON",
+      image: require('../Poze/asusVivabook.jpg')
     };
     addToCart(item);
-    navigate('/cart'); // Navigate to the cart page
+    navigate('/cart');
   };
 
   return (
     <Container>
       <OfferItem>
-        <OfferImage src={require('../Poze/pcZmeu.jpg')} alt="PC ZMEU" />
+        <OfferImage src={require('../Poze/asusVivabook.jpg')} alt="Asus Vivobook" />
         <OfferDetails>
-          <OfferTitle>PC Gaming Blue Legendar Ultra</OfferTitle>
-          <Price>PRET: 1499,99 RON</Price>
+          <OfferTitle>Laptop ASUS 15.6'' Vivobook Go 15 E1504FA</OfferTitle>
+          <Price>PRET: 1698,99 RON</Price>
           <OfferDescription>
-          PC Gaming ZMEU Max, AMD Ryzen 3 3200G 3.6GHz, 8GB DDR4, 1TB SSD, AMD Radeon Vega 8, Iluminare RGB (
-            <Discount>25% reducere</Discount>
+            Laptop ASUS 15.6'' Vivobook Go 15 E1504FA, FHD, Procesor AMD Ryzen™ 5 7520U (4M Cache, up to 4.3 GHz), 8GB DDR5, 512GB SSD, Radeon 610M, No OS, Mixed Black (
+            <Discount>12% reducere</Discount>
             )
           </OfferDescription>
           <AddToCartButton onClick={handleAddToCart}>Adauga in cos</AddToCartButton>
@@ -115,4 +115,4 @@ const Zmeu = () => {
   );
 };
 
-export default Zmeu;
+export default AsusVivo;

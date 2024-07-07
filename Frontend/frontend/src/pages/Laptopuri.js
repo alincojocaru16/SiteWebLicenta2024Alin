@@ -1,15 +1,15 @@
+// src/pages/Laptop.js
 import React from 'react';
 import styled from 'styled-components';
 import Menu from './Menu';
-import Zmeu from './pcZmeu';
 import { Link } from 'react-router-dom';
 
-// Definirea stilurilor pentru containerul principal
 const Container = styled.div`
     position: relative;
-    background-color: #f0f5ff; /* Culoare de fundal pentru container */
+    background-color: #e6f0ff; /* Culoare de fundal pentru container */
     padding: 20px; /* Padding pentru a separa conținutul de marginea containerului */
     overflow-x: hidden; /* Dezactivare derulare orizontală */
+    min-height: 100vh; /* Asigură că fundalul acoperă întreaga înălțime a paginii */
 `;
 
 const OfferItemsContainer = styled.div`
@@ -28,6 +28,10 @@ const OfferItem = styled.div`
     border-radius: 8px; /* Colțuri rotunjite */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Umbra pentru efect de adâncime */
     transition: transform 0.3s ease; /* Tranziție pentru efect de hover */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrare pe orizontală */
+    text-align: center; /* Aliniere text */
     &:hover {
         transform: translateY(-5px); /* Efect de ridicare la hover */
     }
@@ -42,7 +46,7 @@ const OfferImage = styled.img`
 const OfferDescription = styled.p`
     margin: 0; /* Elimină marginile implicit adăugate de paragraf */
     font-weight: bold; /* Face textul bold */
-    max-width: 200px; /* Setează lățimea maximă pentru text */
+    max-width: 300px; /* Setează lățimea maximă pentru text */
     word-wrap: break-word; /* Permite cuvintelor să se împartă pe mai multe linii */
     
     /* Elimină sublinierea textului în legăturile din descriere */
@@ -50,7 +54,6 @@ const OfferDescription = styled.p`
         text-decoration: none;
     }
 `;
-
 
 const Price = styled.p`
     font-size: 18px; /* Setează dimensiunea textului pentru preț */
@@ -63,38 +66,34 @@ const Discount = styled.span`
     color: red; /* Setează culoarea textului la roșu */
 `;
 
-
-
 export default function Laptop(){
     return (
         <Container> {/* Folosim noul container pentru a înfășura conținutul */}
-        
+            <Menu /> {/* Meniul */}
             <OfferItemsContainer>
-            <Menu></Menu>
-            <OfferItem>
-        <a href='/zmeu'>
-                <OfferImage src={require('../Poze/laptopAsusTuf.jpg')} alt="PC ZMEU" />
-                <OfferDescription>
-                    <Price>PRET: 3498,99 RON</Price>
-                    Laptop ASUS Gaming 15.6'' TUF F15 FX507ZC4, FHD 144Hz, Procesor Intel® Core™ i5-12500H (18M Cache, up to 4.50 GHz), 16GB DDR4, 512GB SSD, GeForce RTX 3050 4GB, No OS, Mecha Gray (
-                    <Discount>9% reducere</Discount>
-                    ) 
-                </OfferDescription>
-            </a>
-        </OfferItem>
-
-        <OfferItem>
-        <a href='/zmeu'>
-                <OfferImage src={require('../Poze/asusVivabook.jpg')} alt="PC ZMEU" />
-                <OfferDescription>
-                    <Price>PRET: 1698,99 RON</Price>
-                    Laptop ASUS 15.6'' Vivobook Go 15 E1504FA, FHD, Procesor AMD Ryzen™ 5 7520U (4M Cache, up to 4.3 GHz), 8GB DDR5, 512GB SSD, Radeon 610M, No OS, Mixed Black(
-                    <Discount>12% reducere</Discount>
-                    ) 
-                </OfferDescription>
-            </a>
-        </OfferItem>
-        
+                <OfferItem>
+                    <a href='/AsusTuf'>
+                        <OfferImage src={require('../Poze/laptopAsusTuf.jpg')} alt="PC ZMEU" />
+                        <Price>PRET: 3498,99 RON</Price>
+                        <OfferDescription>
+                            Laptop ASUS Gaming 15.6'' TUF F15 FX507ZC4, FHD 144Hz, Procesor Intel® Core™ i5-12500H (18M Cache, up to 4.50 GHz), 16GB DDR4, 512GB SSD, GeForce RTX 3050 4GB, No OS, Mecha Gray (
+                            <Discount>9% reducere</Discount>
+                            ) 
+                        </OfferDescription>
+                    </a>
+                </OfferItem>
+                <OfferItem>
+                    <a href='/AsusVivo'>
+                        <OfferImage src={require('../Poze/asusVivabook.jpg')} alt="PC ZMEU" />
+                        <Price>PRET: 1698,99 RON</Price>
+                        <OfferDescription>
+                            Laptop ASUS 15.6'' Vivobook Go 15 E1504FA, FHD, Procesor AMD Ryzen™ 5 7520U (4M Cache, up to 4.3 GHz), 8GB DDR5, 512GB SSD, Radeon 610M, No OS, Mixed Black (
+                            <Discount>12% reducere</Discount>
+                            ) 
+                        </OfferDescription>
+                    </a>
+                </OfferItem>
+                
             </OfferItemsContainer>
         </Container>
     );

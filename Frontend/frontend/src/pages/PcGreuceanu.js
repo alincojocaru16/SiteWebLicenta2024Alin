@@ -1,7 +1,7 @@
-// src/pages/pcZmeu.js
+// src/pages/PcGreuceanu.js
 import React, { useContext } from 'react';
 import styled from 'styled-components';
-import { CartContext } from './CartContext'; // Ensure the correct path
+import { CartContext } from './CartContext';
 import { useNavigate } from 'react-router-dom';
 
 const Container = styled.div`
@@ -82,31 +82,29 @@ const AddToCartButton = styled.button`
   }
 `;
 
-const Zmeu = () => {
+const PcGreuceanu = () => {
   const { addToCart } = useContext(CartContext);
   const navigate = useNavigate();
 
   const handleAddToCart = () => {
     const item = {
-      title: "PC Gaming ZMEU Max",
-      price: "1499,99 RON",
-      image: require('../Poze/pcZmeu.jpg')
+      title: "PC Gaming GREUCEANU Legendar Extra",
+      price: "14569,99 RON",
+      image: require('../Poze/pc3.jpg')
     };
     addToCart(item);
-    navigate('/cart'); // Navigate to the cart page
+    navigate('/cart');
   };
 
   return (
     <Container>
       <OfferItem>
-        <OfferImage src={require('../Poze/pcZmeu.jpg')} alt="PC ZMEU" />
+        <OfferImage src={require('../Poze/pc3.jpg')} alt="PC Gaming GREUCEANU Legendar Extra" />
         <OfferDetails>
-          <OfferTitle>PC Gaming Blue Legendar Ultra</OfferTitle>
-          <Price>PRET: 1499,99 RON</Price>
+          <OfferTitle>PC Gaming GREUCEANU Legendar Extra</OfferTitle>
+          <Price>PRET: 14569,99 RON</Price>
           <OfferDescription>
-          PC Gaming ZMEU Max, AMD Ryzen 3 3200G 3.6GHz, 8GB DDR4, 1TB SSD, AMD Radeon Vega 8, Iluminare RGB (
-            <Discount>25% reducere</Discount>
-            )
+            PC Gaming GREUCEANU Legendar Extra, AMD Ryzen 9 7900X 4.7GHz, 64GB DDR5, 2TB SSD, RTX 4080 SUPER 16GB GDDR6X
           </OfferDescription>
           <AddToCartButton onClick={handleAddToCart}>Adauga in cos</AddToCartButton>
         </OfferDetails>
@@ -115,4 +113,4 @@ const Zmeu = () => {
   );
 };
 
-export default Zmeu;
+export default PcGreuceanu;

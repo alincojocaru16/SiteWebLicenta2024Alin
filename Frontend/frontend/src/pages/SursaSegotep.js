@@ -1,7 +1,7 @@
-// src/pages/pcZmeu.js
+// src/pages/SursaSegotep.js
 import React, { useContext } from 'react';
 import styled from 'styled-components';
-import { CartContext } from './CartContext'; // Ensure the correct path
+import { CartContext } from './CartContext';
 import { useNavigate } from 'react-router-dom';
 
 const Container = styled.div`
@@ -56,10 +56,6 @@ const OfferDescription = styled.p`
   word-wrap: break-word;
 `;
 
-const Discount = styled.span`
-  color: red;
-`;
-
 const Price = styled.p`
   font-size: 18px;
   font-weight: bold;
@@ -82,31 +78,29 @@ const AddToCartButton = styled.button`
   }
 `;
 
-const Zmeu = () => {
+const SursaSegotep = () => {
   const { addToCart } = useContext(CartContext);
   const navigate = useNavigate();
 
   const handleAddToCart = () => {
     const item = {
-      title: "PC Gaming ZMEU Max",
-      price: "1499,99 RON",
-      image: require('../Poze/pcZmeu.jpg')
+      title: "Sursa Segotep GP Series 500W, 80 PLUS GOLD",
+      price: "284,99 RON",
+      image: require('../Poze/sursa.jpg')
     };
     addToCart(item);
-    navigate('/cart'); // Navigate to the cart page
+    navigate('/cart');
   };
 
   return (
     <Container>
       <OfferItem>
-        <OfferImage src={require('../Poze/pcZmeu.jpg')} alt="PC ZMEU" />
+        <OfferImage src={require('../Poze/sursa.jpg')} alt="Sursa Segotep" />
         <OfferDetails>
-          <OfferTitle>PC Gaming Blue Legendar Ultra</OfferTitle>
-          <Price>PRET: 1499,99 RON</Price>
+          <OfferTitle>Sursa Segotep GP Series 500W, 80 PLUS GOLD</OfferTitle>
+          <Price>PRET: 284,99 RON</Price>
           <OfferDescription>
-          PC Gaming ZMEU Max, AMD Ryzen 3 3200G 3.6GHz, 8GB DDR4, 1TB SSD, AMD Radeon Vega 8, Iluminare RGB (
-            <Discount>25% reducere</Discount>
-            )
+            Sursa Segotep GP Series 500W, 80 PLUS GOLD
           </OfferDescription>
           <AddToCartButton onClick={handleAddToCart}>Adauga in cos</AddToCartButton>
         </OfferDetails>
@@ -115,4 +109,4 @@ const Zmeu = () => {
   );
 };
 
-export default Zmeu;
+export default SursaSegotep;

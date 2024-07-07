@@ -1,7 +1,7 @@
-// src/pages/pcZmeu.js
+// src/pages/ProcesorIntel.js
 import React, { useContext } from 'react';
 import styled from 'styled-components';
-import { CartContext } from './CartContext'; // Ensure the correct path
+import { CartContext } from './CartContext';
 import { useNavigate } from 'react-router-dom';
 
 const Container = styled.div`
@@ -56,10 +56,6 @@ const OfferDescription = styled.p`
   word-wrap: break-word;
 `;
 
-const Discount = styled.span`
-  color: red;
-`;
-
 const Price = styled.p`
   font-size: 18px;
   font-weight: bold;
@@ -82,31 +78,29 @@ const AddToCartButton = styled.button`
   }
 `;
 
-const Zmeu = () => {
+const ProcesorIntel = () => {
   const { addToCart } = useContext(CartContext);
   const navigate = useNavigate();
 
   const handleAddToCart = () => {
     const item = {
-      title: "PC Gaming ZMEU Max",
-      price: "1499,99 RON",
-      image: require('../Poze/pcZmeu.jpg')
+      title: "Procesor Intel Rocket Lake, Core i5 11400 2.6GHz box",
+      price: "503,62 RON",
+      image: require('../Poze/procesorI5.jpg')
     };
     addToCart(item);
-    navigate('/cart'); // Navigate to the cart page
+    navigate('/cart');
   };
 
   return (
     <Container>
       <OfferItem>
-        <OfferImage src={require('../Poze/pcZmeu.jpg')} alt="PC ZMEU" />
+        <OfferImage src={require('../Poze/procesorI5.jpg')} alt="Procesor Intel" />
         <OfferDetails>
-          <OfferTitle>PC Gaming Blue Legendar Ultra</OfferTitle>
-          <Price>PRET: 1499,99 RON</Price>
+          <OfferTitle>Procesor Intel Rocket Lake, Core i5 11400 2.6GHz box</OfferTitle>
+          <Price>PRET: 503,62 RON</Price>
           <OfferDescription>
-          PC Gaming ZMEU Max, AMD Ryzen 3 3200G 3.6GHz, 8GB DDR4, 1TB SSD, AMD Radeon Vega 8, Iluminare RGB (
-            <Discount>25% reducere</Discount>
-            )
+            Procesor Intel Rocket Lake, Core i5 11400 2.6GHz box
           </OfferDescription>
           <AddToCartButton onClick={handleAddToCart}>Adauga in cos</AddToCartButton>
         </OfferDetails>
@@ -115,4 +109,4 @@ const Zmeu = () => {
   );
 };
 
-export default Zmeu;
+export default ProcesorIntel;

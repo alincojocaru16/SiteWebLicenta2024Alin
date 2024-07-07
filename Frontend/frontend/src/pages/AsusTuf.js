@@ -1,7 +1,7 @@
-// src/pages/pcZmeu.js
+// src/pages/AsusTuf.js
 import React, { useContext } from 'react';
 import styled from 'styled-components';
-import { CartContext } from './CartContext'; // Ensure the correct path
+import { CartContext } from './CartContext';
 import { useNavigate } from 'react-router-dom';
 
 const Container = styled.div`
@@ -82,30 +82,30 @@ const AddToCartButton = styled.button`
   }
 `;
 
-const Zmeu = () => {
+const AsusTuf = () => {
   const { addToCart } = useContext(CartContext);
   const navigate = useNavigate();
 
   const handleAddToCart = () => {
     const item = {
-      title: "PC Gaming ZMEU Max",
-      price: "1499,99 RON",
-      image: require('../Poze/pcZmeu.jpg')
+      title: "Laptop ASUS Gaming 15.6'' TUF F15 FX507ZC4",
+      price: "3498,99 RON",
+      image: require('../Poze/laptopAsusTuf.jpg')
     };
     addToCart(item);
-    navigate('/cart'); // Navigate to the cart page
+    navigate('/cart');
   };
 
   return (
     <Container>
       <OfferItem>
-        <OfferImage src={require('../Poze/pcZmeu.jpg')} alt="PC ZMEU" />
+        <OfferImage src={require('../Poze/laptopAsusTuf.jpg')} alt="Asus Tuf" />
         <OfferDetails>
-          <OfferTitle>PC Gaming Blue Legendar Ultra</OfferTitle>
-          <Price>PRET: 1499,99 RON</Price>
+          <OfferTitle>Laptop ASUS Gaming 15.6'' TUF F15 FX507ZC4</OfferTitle>
+          <Price>PRET: 3498,99 RON</Price>
           <OfferDescription>
-          PC Gaming ZMEU Max, AMD Ryzen 3 3200G 3.6GHz, 8GB DDR4, 1TB SSD, AMD Radeon Vega 8, Iluminare RGB (
-            <Discount>25% reducere</Discount>
+            Laptop ASUS Gaming 15.6'' TUF F15 FX507ZC4, FHD 144Hz, Procesor Intel® Core™ i5-12500H (18M Cache, up to 4.50 GHz), 16GB DDR4, 512GB SSD, GeForce RTX 3050 4GB, No OS, Mecha Gray (
+            <Discount>9% reducere</Discount>
             )
           </OfferDescription>
           <AddToCartButton onClick={handleAddToCart}>Adauga in cos</AddToCartButton>
@@ -115,4 +115,4 @@ const Zmeu = () => {
   );
 };
 
-export default Zmeu;
+export default AsusTuf;

@@ -257,7 +257,7 @@ export default function HomeClient() {
           </a>
         </OfferItem>
         <OfferItem>
-          <a href='/zmeu'>
+          <a href='/PcBlue'>
             <OfferImage src={require('../Poze/pcBlue.jpg')} alt="PC ZMEU" />
             <OfferDescription>
               <Price>5398,99 RON</Price>
@@ -269,7 +269,7 @@ export default function HomeClient() {
         </OfferItem>
 
         <OfferItem>
-          <a href='/zmeu'>
+          <a href='/PcWhite'>
             <OfferImage src={require('../Poze/pcWhite.jpg')} alt="PC ZMEU" />
             <OfferDescription>
               <Price>3699,99 RON</Price>
@@ -280,7 +280,7 @@ export default function HomeClient() {
           </a>
         </OfferItem>
         <OfferItem>
-          <a href='/zmeu'>
+          <a href='/AsusTuf'>
             <OfferImage src={require('../Poze/laptopAsusTuf.jpg')} alt="PC ZMEU" />
             <OfferDescription>
               <Price>3498,99 RON</Price>
@@ -291,19 +291,9 @@ export default function HomeClient() {
           </a>
         </OfferItem>
 
+       
         <OfferItem>
-          <a href='/zmeu'>
-            <OfferImage src={require('../Poze/asusVivabook.jpg')} alt="PC ZMEU" />
-            <OfferDescription>
-              <Price>1698,99 RON</Price>
-              Laptop ASUS 15.6'' Vivobook Go 15 E1504FA, FHD, Procesor AMD Ryzen™ 5 7520U (4M Cache, up to 4.3 GHz), 8GB DDR5, 512GB SSD, Radeon 610M, No OS, Mixed Black (
-              <Discount>12% reducere</Discount>
-              )
-            </OfferDescription>
-          </a>
-        </OfferItem>
-        <OfferItem>
-          <a href='/zmeu'>
+          <a href='/PS5'>
             <OfferImage src={require('../Poze/ps5Bun.jpg')} alt="PC ZMEU" />
             <OfferDescription>
               <Price>2699,99 RON</Price>
@@ -313,41 +303,7 @@ export default function HomeClient() {
             </OfferDescription>
           </a>
         </OfferItem>
-        <OfferItem>
-          <a href='/zmeu'>
-            <OfferImage src={require('../Poze/ps5Bun.jpg')} alt="PC ZMEU" />
-            <OfferDescription>
-              <Price>2699,99 RON</Price>
-              Consola Sony PlayStation 5 Slim Disk Edition 1TB White (
-              <Discount>5% reducere</Discount>
-              )
-            </OfferDescription>
-          </a>
-        </OfferItem>
-
-
-        <OfferItem>
-          <a href='/zmeu'>
-            <OfferImage src={require('../Poze/ps5Bun.jpg')} alt="PC ZMEU" />
-            <OfferDescription>
-              <Price>2699,99 RON</Price>
-              Consola Sony PlayStation 5 Slim Disk Edition 1TB White (
-              <Discount>5% reducere</Discount>
-              )
-            </OfferDescription>
-          </a>
-        </OfferItem>
-        <OfferItem>
-          <a href='/zmeu'>
-            <OfferImage src={require('../Poze/ps5Bun.jpg')} alt="PC ZMEU" />
-            <OfferDescription>
-              <Price>2699,99 RON</Price>
-              Consola Sony PlayStation 5 Slim Disk Edition 1TB White (
-              <Discount>5% reducere</Discount>
-              )
-            </OfferDescription>
-          </a>
-        </OfferItem>
+       
         
       </OfferItemsContainer>
     </PageContainer>

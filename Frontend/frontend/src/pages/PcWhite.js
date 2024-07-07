@@ -1,7 +1,7 @@
-// src/pages/pcZmeu.js
+// src/pages/PcWhite.js
 import React, { useContext } from 'react';
 import styled from 'styled-components';
-import { CartContext } from './CartContext'; // Ensure the correct path
+import { CartContext } from './CartContext';
 import { useNavigate } from 'react-router-dom';
 
 const Container = styled.div`
@@ -82,30 +82,30 @@ const AddToCartButton = styled.button`
   }
 `;
 
-const Zmeu = () => {
+const PcWhite = () => {
   const { addToCart } = useContext(CartContext);
   const navigate = useNavigate();
 
   const handleAddToCart = () => {
     const item = {
-      title: "PC Gaming ZMEU Max",
-      price: "1499,99 RON",
-      image: require('../Poze/pcZmeu.jpg')
+      title: "PC Gaming Legendar White Hyper",
+      price: "3699,99 RON",
+      image: require('../Poze/pcWhite.jpg')
     };
     addToCart(item);
-    navigate('/cart'); // Navigate to the cart page
+    navigate('/cart');
   };
 
   return (
     <Container>
       <OfferItem>
-        <OfferImage src={require('../Poze/pcZmeu.jpg')} alt="PC ZMEU" />
+        <OfferImage src={require('../Poze/pcWhite.jpg')} alt="PC Gaming Legendar White Hyper" />
         <OfferDetails>
-          <OfferTitle>PC Gaming Blue Legendar Ultra</OfferTitle>
-          <Price>PRET: 1499,99 RON</Price>
+          <OfferTitle>PC Gaming Legendar White Hyper</OfferTitle>
+          <Price>PRET: 3699,99 RON</Price>
           <OfferDescription>
-          PC Gaming ZMEU Max, AMD Ryzen 3 3200G 3.6GHz, 8GB DDR4, 1TB SSD, AMD Radeon Vega 8, Iluminare RGB (
-            <Discount>25% reducere</Discount>
+            PC Gaming Legendar White Hyper, Intel i5-12400F 2.5GHz, 16GB DDR5, 1TB SSD, RTX 3050 8GB GDDR6, Iluminare RGB (
+            <Discount>5% reducere</Discount>
             )
           </OfferDescription>
           <AddToCartButton onClick={handleAddToCart}>Adauga in cos</AddToCartButton>
@@ -115,4 +115,4 @@ const Zmeu = () => {
   );
 };
 
-export default Zmeu;
+export default PcWhite;
