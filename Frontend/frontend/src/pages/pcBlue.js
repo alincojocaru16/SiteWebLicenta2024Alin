@@ -1,7 +1,7 @@
 // src/pages/pcZmeu.js
 import React, { useContext } from 'react';
 import styled from 'styled-components';
-import { CartContext } from './CartContext'; // Ensure the correct path
+import { CartContext } from './CartContext'; // Make sure the import path is correct
 import { useNavigate } from 'react-router-dom';
 
 const Container = styled.div`
@@ -82,7 +82,7 @@ const AddToCartButton = styled.button`
   }
 `;
 
-const Zmeu = () => {
+const PcBlue = () => {
   const { addToCart } = useContext(CartContext);
   const navigate = useNavigate();
 
@@ -90,7 +90,7 @@ const Zmeu = () => {
     const item = {
       title: "PC Gaming Blue Legendar Ultra",
       price: "5398,99 RON",
-      image: require('../Poze/pcZmeu.jpg')
+      image: require('../Poze/pcBlue.jpg').default
     };
     addToCart(item);
     navigate('/cart'); // Navigate to the cart page
@@ -99,7 +99,7 @@ const Zmeu = () => {
   return (
     <Container>
       <OfferItem>
-        <OfferImage src={require('../Poze/pcZmeu.jpg')} alt="PC ZMEU" />
+        <OfferImage src={require('../Poze/pcBlue.jpg').default} alt="PC ZMEU" />
         <OfferDetails>
           <OfferTitle>PC Gaming Blue Legendar Ultra</OfferTitle>
           <Price>PRET: 5398,99 RON</Price>
@@ -115,4 +115,4 @@ const Zmeu = () => {
   );
 };
 
-export default Zmeu;
+export default PcBlue;
