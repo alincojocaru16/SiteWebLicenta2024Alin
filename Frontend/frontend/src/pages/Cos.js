@@ -1,5 +1,5 @@
 // src/pages/CosClient.js
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import Menu from './Menu';
 import { CartContext } from './CartContext'; // Ensure the correct path
@@ -98,32 +98,26 @@ const PlaceOrderButton = styled.button`
 `;
 
 const CosClient = () => {
-  const { cartItems, removeFromCart } = useContext(CartContext);
-  const [localCartItems, setLocalCartItems] = useState(cartItems);
+  const { cartItems, removeFromCart, clearCart } = useContext(CartContext);
 
   const handlePlaceOrder = () => {
     alert("Order placed!");
-    setLocalCartItems([]); // Clear the local cart items
-  };
-
-  const handleRemoveFromCart = (index) => {
-    const updatedItems = localCartItems.filter((item, i) => i !== index);
-    setLocalCartItems(updatedItems);
+    clearCart(); // Clear the global cart items
   };
 
   return (
     <Container>
       <Menu />
-      {localCartItems.length > 0 ? (
+      {cartItems.length > 0 ? (
         <CartContainer>
-          {localCartItems.map((item, index) => (
+          {cartItems.map((item, index) => (
             <CartItem key={index}>
               <OfferImage src={item.image} alt={item.title} />
               <CartItemDetails>
                 <CartItemTitle>{item.title}</CartItemTitle>
                 <CartItemPrice>{item.price}</CartItemPrice>
               </CartItemDetails>
-              <RemoveButton onClick={() => handleRemoveFromCart(index)}>Sterge</RemoveButton>
+              <RemoveButton onClick={() => removeFromCart(index)}>Sterge</RemoveButton>
             </CartItem>
           ))}
           <PlaceOrderButton onClick={handlePlaceOrder}>Plaseaza Comanda</PlaceOrderButton>
