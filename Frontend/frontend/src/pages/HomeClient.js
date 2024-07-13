@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
-import { useLocation, Link } from 'react-router-dom';
+import { useLocation, Link, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import Menu from './Menu';
+import MenuClient from './MenuClient';
 
-// Container pentru meniu
+const PageContainer = styled.div`
+  background-color: #e6f0ff;
+  min-height: 100vh;
+  padding-bottom: 20px;
+`;
+
 const MenuContainer = styled.div`
   position: fixed;
   top: 0;
@@ -14,12 +19,7 @@ const MenuContainer = styled.div`
   align-items: center;
   padding: 10px;
   z-index: 1;
-  background-color: #e6f0ff; /* Asigură-te că fundalul este același */
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+  background-color: #e6f0ff;
 `;
 
 const HamburgerMenu = styled.div`
@@ -39,27 +39,33 @@ const Bar = styled.div`
   margin: 4px 0;
 `;
 
-// Container pentru email și coș
 const EmailCartContainer = styled.div`
   display: flex;
   align-items: center;
-  gap: 10px; /* Spațiu între "Cosul meu" și adresa de email */
+  gap: 10px;
   position: absolute;
   top: 10px;
   right: 10px;
-  z-index: 2; /* Asigură-te că este peste alte elemente */
+  z-index: 2;
   a {
-    text-decoration: none; /* Elimină sublinierea */
-    color: inherit; /* Păstrează culoarea textului moștenită */
-  }
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-    align-items: flex-end;
+    text-decoration: none;
+    color: inherit;
   }
 `;
 
-// Container pentru titlu
+const LogoutButton = styled.button`
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  &:hover {
+    background-color: #ff0000;
+  }
+`;
+
 const TitleContainer = styled.div`
   position: relative;
   top: 130px;
@@ -71,35 +77,34 @@ const TitleContainer = styled.div`
 
 const OfferItemsContainer = styled.div`
   display: flex;
-  flex-wrap: wrap; /* Permite elementelor să treacă pe un nou rând */
-  justify-content: space-between; /* Așază elementele la începutul, mijlocul și sfârșitul containerului */
-  gap: 20px; /* Spațiu între elementele din container */
-  margin-top: 200px; /* Margin de sus */
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 200px;
 `;
 
 const OfferItem = styled.div`
-  width: calc(20% - 20px); /* Asigură 5 elemente pe un rând cu spațiu între ele */
-  padding: 10px; /* Padding pentru a separa conținutul */
-  background-color: #f9f9f9; /* Culoare de fundal pentru element */
-  border-radius: 8px; /* Colțuri rotunjite */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Umbra pentru efect de adâncime */
-  transition: transform 0.3s ease; /* Tranziție pentru efect de hover */
-  text-align: center; /* Center-align text */
+  width: calc(20% - 20px);
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  text-align: center;
   &:hover {
-    transform: translateY(-5px); /* Efect de ridicare la hover */
+    transform: translateY(-5px);
   }
-
   @media (max-width: 1200px) {
-    width: calc(25% - 20px); /* 4 elemente pe un rând */
+    width: calc(25% - 20px);
   }
   @media (max-width: 992px) {
-    width: calc(33.33% - 20px); /* 3 elemente pe un rând */
+    width: calc(33.33% - 20px);
   }
   @media (max-width: 768px) {
-    width: calc(50% - 20px); /* 2 elemente pe un rând */
+    width: calc(50% - 20px);
   }
   @media (max-width: 576px) {
-    width: calc(100% - 20px); /* 1 element pe un rând */
+    width: calc(100% - 20px);
   }
 `;
 
@@ -126,25 +131,9 @@ const Discount = styled.span`
   color: red;
 `;
 
-const PageContainer = styled.div`
-  background-color: #e6f0ff; /* Setează culoarea de fundal pentru a se potrivi cu cea a componentelor */
-  min-height: 100vh; /* Asigură că se extinde pe înălțimea întregii pagini */
-  padding-bottom: 20px; /* Adaugă padding în partea de jos pentru a preveni suprapunerea conținutului */
-`;
-
-const Background = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: calc(100% - 20px); /* Înălțimea Background-ului */
-  background-color: #e6f0ff; /* Albastru deschis */
-  z-index: -1; /* Asigură-te că este plasat sub butoane */
-`;
-
 const SearchBar = styled.div`
   position: relative;
-  top: 20px; /* Ajustează poziția pentru a fi sub meniu */
+  top: 20px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -170,7 +159,6 @@ const SearchButton = styled.button`
   padding: 10px 20px;
   margin-top: 30px;
   cursor: pointer;
-
   @media (max-width: 768px) {
     padding: 10px;
     margin-left: 5px;
@@ -182,7 +170,7 @@ const LeftImage = styled.img`
   top: 25%;
   right: 60%;
   transform: translateX(-50%);
-  max-height: 80px; /* Setează o înălțime maximă pentru imagine */
+  max-height: 80px;
 `;
 
 const RightImage = styled.img`
@@ -190,26 +178,23 @@ const RightImage = styled.img`
   top: 25%;
   left: 60%;
   transform: translateX(50%);
-  max-height: 80px; /* Setează o înălțime maximă pentru imagine */
+  max-height: 80px;
 `;
 
 export default function HomeClient() {
   const location = useLocation();
-  const { userData } = location.state;
+  const navigate = useNavigate();
+  const { userData } = location.state || {};
 
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
+  const handleLogout = () => {
+    navigate('/');
   };
 
   return (
     <PageContainer>
-      <Menu />
-      <Background />
-      {/* Container pentru meniu */}
+      <MenuClient />
       <MenuContainer>
-        <HamburgerMenu onClick={toggleMenu}>
+        <HamburgerMenu>
           <Bar />
           <Bar />
           <Bar />
@@ -223,9 +208,7 @@ export default function HomeClient() {
               <div>
                 <Link to="/login">{userData.EmailClient}</Link>
               </div>
-              <div>
-                <Link to="/login">{userData.ClientId}</Link>
-              </div>
+              <LogoutButton onClick={handleLogout}>Deconectare</LogoutButton>
             </>
           )}
         </EmailCartContainer>
@@ -237,16 +220,14 @@ export default function HomeClient() {
       </SearchBar>
 
       <LeftImage src={require('../Poze/superOferta.png')} alt="Super Oferta" />
-      
       <RightImage src={require('../Poze/superOferta.png')} alt="Super Oferta" />
       <TitleContainer>
         <h2>CELE MAI BUNE OFERTE</h2>
       </TitleContainer>
 
-      {/* Container pentru itemele ofertei */}
       <OfferItemsContainer>
         <OfferItem>
-          <a href='/zmeu'>
+          <Link to='/zmeu'>
             <OfferImage src={require('../Poze/pcZmeu.jpg')} alt="PC ZMEU" />
             <OfferDescription>
               <Price>PRET: 1499,99 RON</Price>
@@ -254,10 +235,10 @@ export default function HomeClient() {
               <Discount>25% reducere</Discount>
               )
             </OfferDescription>
-          </a>
+          </Link>
         </OfferItem>
         <OfferItem>
-          <a href='/PcBlue'>
+          <Link to='/PcBlue'>
             <OfferImage src={require('../Poze/pcBlue.jpg')} alt="PC ZMEU" />
             <OfferDescription>
               <Price>5398,99 RON</Price>
@@ -265,11 +246,10 @@ export default function HomeClient() {
               <Discount>15% reducere</Discount>
               )
             </OfferDescription>
-          </a>
+          </Link>
         </OfferItem>
-
         <OfferItem>
-          <a href='/PcWhite'>
+          <Link to='/PcWhite'>
             <OfferImage src={require('../Poze/pcWhite.jpg')} alt="PC ZMEU" />
             <OfferDescription>
               <Price>3699,99 RON</Price>
@@ -277,10 +257,10 @@ export default function HomeClient() {
               <Discount>5% reducere</Discount>
               )
             </OfferDescription>
-          </a>
+          </Link>
         </OfferItem>
         <OfferItem>
-          <a href='/AsusTuf'>
+          <Link to='/AsusTuf'>
             <OfferImage src={require('../Poze/laptopAsusTuf.jpg')} alt="PC ZMEU" />
             <OfferDescription>
               <Price>3498,99 RON</Price>
@@ -288,12 +268,10 @@ export default function HomeClient() {
               <Discount>9% reducere</Discount>
               )
             </OfferDescription>
-          </a>
+          </Link>
         </OfferItem>
-
-       
         <OfferItem>
-          <a href='/PS5'>
+          <Link to='/PS5'>
             <OfferImage src={require('../Poze/ps5Bun.jpg')} alt="PC ZMEU" />
             <OfferDescription>
               <Price>2699,99 RON</Price>
@@ -301,10 +279,8 @@ export default function HomeClient() {
               <Discount>5% reducere</Discount>
               )
             </OfferDescription>
-          </a>
+          </Link>
         </OfferItem>
-       
-        
       </OfferItemsContainer>
     </PageContainer>
   );

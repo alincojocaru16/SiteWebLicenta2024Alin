@@ -48,7 +48,7 @@ const LogoImage = styled.img`
     height: 100%;
 `;
 
-const Menu = () => {
+const MenuClient = () => {
     const location = useLocation();
     const navigate = useNavigate();
     const { userData } = location.state || {};
@@ -68,23 +68,21 @@ const Menu = () => {
             </LogoContainer>
             <MenuList>
                 <MenuItem>
-                    <MenuLink to="/calculatoare">PC Gaming</MenuLink>
+                    <MenuLink to="/calculatoareC">PC Gaming</MenuLink>
                 </MenuItem>
                 <MenuItem>
-                    <MenuLink to="/laptop">Laptop</MenuLink>
+                    <MenuLink to="/laptopC">Laptop</MenuLink>
+                </MenuItem>
+                
+                <MenuItem>
+                    <MenuLink to="/consoleC">Console</MenuLink>
                 </MenuItem>
                 <MenuItem>
-                    <span onClick={handleHomeClick} style={{ cursor: 'pointer', color: 'white', textDecoration: 'none' }}>Home</span>
-                </MenuItem>
-                <MenuItem>
-                    <MenuLink to="/console">Console</MenuLink>
-                </MenuItem>
-                <MenuItem>
-                    <MenuLink to="/componente">Componente</MenuLink>
+                    <MenuLink to="/componenteC">Componente</MenuLink>
                 </MenuItem>
             </MenuList>
         </Navbar>
     );
 }
 
-export default Menu;
+export default MenuClient;

@@ -24,6 +24,10 @@ import AsusVivo from './pages/AsusVivo';
 import PlacaVideo from './pages/PlacaVideo'; 
 import ProcesorIntel from './pages/ProcesorIntel';
 import SursaSegotep from './pages/SursaSegotep';
+import ComponenteClient from './pages/ComponentePcClient';
+import ConsoleClient from './pages/ConsoleClient';
+import CalculatoareClient from './pages/CalculatoareClient';
+import LaptopClient from './pages/LaptopuriClient';
 function App() {
   return (
     <CartProvider>
@@ -35,11 +39,15 @@ function App() {
           <Route path='/pcBlue' element={<PcBlue />} />
           <Route path='/register' element={<Inregistrare />} />
           <Route path='/calculatoare' element={<Calculatoare />} />
+          <Route path='/calculatoareC' element={<CalculatoareClient />} />
           <Route path='/PcZmeuExtra' element={<PcZmeuExtra />} /> 
           <Route path='/SursaSegotep' element={<SursaSegotep />} /> 
           <Route path='/console' element={<Console />} />
+          <Route path='/consoleC' element={<ConsoleClient />} />
           <Route path='/laptop' element={<Laptop />} />
+          <Route path='/laptopC' element={<LaptopClient />} />
           <Route path='/componente' element={<Componente />} />
+          <Route path='/componenteC' element={<ComponenteClient />} />
           <Route path='/ProcesorIntel' element={<ProcesorIntel />} />
           <Route path='/homeclient' element={<HomeClient />} />
           <Route path='/pcWhite' element={<PcWhite />} />
