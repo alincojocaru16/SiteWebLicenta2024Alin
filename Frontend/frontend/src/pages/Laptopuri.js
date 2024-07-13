@@ -72,7 +72,7 @@ export default function Laptop(){
             <Menu /> {/* Meniul */}
             <OfferItemsContainer>
                 <OfferItem>
-                    <a href='/AsusTuf'>
+                    <a href='/AsusTufN'>
                         <OfferImage src={require('../Poze/laptopAsusTuf.jpg')} alt="PC ZMEU" />
                         <Price>PRET: 3498,99 RON</Price>
                         <OfferDescription>
@@ -83,7 +83,7 @@ export default function Laptop(){
                     </a>
                 </OfferItem>
                 <OfferItem>
-                    <a href='/AsusVivo'>
+                    <a href='/AsusVivoN'>
                         <OfferImage src={require('../Poze/asusVivabook.jpg')} alt="PC ZMEU" />
                         <Price>PRET: 1698,99 RON</Price>
                         <OfferDescription>

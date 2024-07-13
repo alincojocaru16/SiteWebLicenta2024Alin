@@ -75,7 +75,7 @@ export default function Componente(){
             <Menu></Menu>
            
             <OfferItem>
-        <a href='/PlacaVideo'>
+        <a href='/PlacaVideoN'>
                 <OfferImage src={require('../Poze/placaGeForceRTX4060.jpg')} alt="PC ZMEU" />
                 <OfferDescription>
                     <Price>PRET: 2699,99 RON</Price>
@@ -86,7 +86,7 @@ export default function Componente(){
             </a>
         </OfferItem>
         <OfferItem>
-        <a href='/ProcesorIntel'>
+        <a href='/ProcesorIntelN'>
                 <OfferImage src={require('../Poze/procesorI5.jpg')} alt="PC ZMEU" />
                 <OfferDescription>
                     <Price>PRET: 503,62 RON</Price>
@@ -96,7 +96,7 @@ export default function Componente(){
         </OfferItem>
 
         <OfferItem>
-        <a href='/SursaSegotep'>
+        <a href='/SursaSegotepN'>
                 <OfferImage src={require('../Poze/sursa.jpg')} alt="PC ZMEU" />
                 <OfferDescription>
                     <Price>PRET: 284,99 RON</Price>

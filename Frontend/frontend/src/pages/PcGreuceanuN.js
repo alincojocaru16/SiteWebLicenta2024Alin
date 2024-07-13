@@ -1,4 +1,4 @@
-// src/pages/PlacaVideo.js
+// src/pages/PcGreuceanu.js
 import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { CartContext } from './CartContext';
@@ -82,15 +82,15 @@ const AddToCartButton = styled.button`
   }
 `;
 
-const PlacaVideo = () => {
+const PcGreuceanuN = () => {
   const { addToCart } = useContext(CartContext);
   const navigate = useNavigate();
 
   const handleAddToCart = () => {
     const item = {
-      title: "Placa video GIGABYTE GeForce RTX 4060 EAGLE OC 8GB GDDR6 128-bit DLSS 3.0",
-      price: "2699,99 RON",
-      image: require('../Poze/placaGeForceRTX4060.jpg')
+      title: "PC Gaming GREUCEANU Legendar Extra",
+      price: "14569,99 RON",
+      image: require('../Poze/pc3.jpg')
     };
     addToCart(item);
     navigate('/cart');
@@ -99,16 +99,18 @@ const PlacaVideo = () => {
   return (
     <Container>
       <OfferItem>
-        <OfferImage src={require('../Poze/placaGeForceRTX4060.jpg')} alt="Placa video" />
+        <OfferImage src={require('../Poze/pc3.jpg')} alt="PC Gaming GREUCEANU Legendar Extra" />
         <OfferDetails>
-          <OfferTitle>Placa video GIGABYTE GeForce RTX 4060 EAGLE OC 8GB GDDR6 128-bit DLSS 3.0</OfferTitle>
-          <Price>PRET: 2699,99 RON</Price>
-          
-          <AddToCartButton onClick={handleAddToCart}>Adauga in cos</AddToCartButton>
+          <OfferTitle>PC Gaming GREUCEANU Legendar Extra</OfferTitle>
+          <Price>PRET: 14569,99 RON</Price>
+          <OfferDescription>
+            PC Gaming GREUCEANU Legendar Extra, AMD Ryzen 9 7900X 4.7GHz, 64GB DDR5, 2TB SSD, RTX 4080 SUPER 16GB GDDR6X
+          </OfferDescription>
+        
         </OfferDetails>
       </OfferItem>
     </Container>
   );
 };
 
-export default PlacaVideo;
+export default PcGreuceanuN;

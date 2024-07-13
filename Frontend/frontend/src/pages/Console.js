@@ -74,7 +74,7 @@ export default function Console() {
             <Menu /> {/* Adăugăm meniul aici */}
             <OfferItemsContainer>
                 <OfferItem>
-                    <a href='/PS5'>
+                    <a href='/PS5N'>
                         <OfferImage src={require('../Poze/ps5Bun.jpg')} alt="PS5" />
                         <OfferDescription>
                             <Price>PRET: 2699,99 RON</Price>
@@ -86,7 +86,7 @@ export default function Console() {
                 </OfferItem>
 
                 <OfferItem>
-                    <a href='/Xbox'>
+                    <a href='/XboxN'>
                         <OfferImage src={require('../Poze/xbox.jpg')} alt="Xbox" />
                         <OfferDescription>
                             <Price>PRET: 1.379,99 RON</Price>

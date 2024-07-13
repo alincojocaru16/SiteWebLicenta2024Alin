@@ -1,4 +1,4 @@
-// src/pages/PlacaVideo.js
+// src/pages/PS5.js
 import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { CartContext } from './CartContext';
@@ -82,15 +82,15 @@ const AddToCartButton = styled.button`
   }
 `;
 
-const PlacaVideo = () => {
+const PS5N = () => {
   const { addToCart } = useContext(CartContext);
   const navigate = useNavigate();
 
   const handleAddToCart = () => {
     const item = {
-      title: "Placa video GIGABYTE GeForce RTX 4060 EAGLE OC 8GB GDDR6 128-bit DLSS 3.0",
+      title: "Consola Sony PlayStation 5 Slim Disk Edition 1TB White",
       price: "2699,99 RON",
-      image: require('../Poze/placaGeForceRTX4060.jpg')
+      image: require('../Poze/ps5Bun.jpg')
     };
     addToCart(item);
     navigate('/cart');
@@ -99,16 +99,20 @@ const PlacaVideo = () => {
   return (
     <Container>
       <OfferItem>
-        <OfferImage src={require('../Poze/placaGeForceRTX4060.jpg')} alt="Placa video" />
+        <OfferImage src={require('../Poze/ps5Bun.jpg')} alt="PS5" />
         <OfferDetails>
-          <OfferTitle>Placa video GIGABYTE GeForce RTX 4060 EAGLE OC 8GB GDDR6 128-bit DLSS 3.0</OfferTitle>
+          <OfferTitle>Consola Sony PlayStation 5 Slim Disk Edition 1TB White</OfferTitle>
           <Price>PRET: 2699,99 RON</Price>
+          <OfferDescription>
+            Consola Sony PlayStation 5 Slim Disk Edition 1TB White (
+            <Discount>5% reducere</Discount>
+            )
+          </OfferDescription>
           
-          <AddToCartButton onClick={handleAddToCart}>Adauga in cos</AddToCartButton>
         </OfferDetails>
       </OfferItem>
     </Container>
   );
 };
 
-export default PlacaVideo;
+export default PS5N;

@@ -1,4 +1,4 @@
-// src/pages/PlacaVideo.js
+// src/pages/Xbox.js
 import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { CartContext } from './CartContext';
@@ -82,15 +82,15 @@ const AddToCartButton = styled.button`
   }
 `;
 
-const PlacaVideo = () => {
+const XboxN = () => {
   const { addToCart } = useContext(CartContext);
   const navigate = useNavigate();
 
   const handleAddToCart = () => {
     const item = {
-      title: "Placa video GIGABYTE GeForce RTX 4060 EAGLE OC 8GB GDDR6 128-bit DLSS 3.0",
-      price: "2699,99 RON",
-      image: require('../Poze/placaGeForceRTX4060.jpg')
+      title: "Consola Microsoft Xbox Series S 512GB White",
+      price: "1.379,99 RON",
+      image: require('../Poze/xbox.jpg')
     };
     addToCart(item);
     navigate('/cart');
@@ -99,16 +99,18 @@ const PlacaVideo = () => {
   return (
     <Container>
       <OfferItem>
-        <OfferImage src={require('../Poze/placaGeForceRTX4060.jpg')} alt="Placa video" />
+        <OfferImage src={require('../Poze/xbox.jpg')} alt="Xbox" />
         <OfferDetails>
-          <OfferTitle>Placa video GIGABYTE GeForce RTX 4060 EAGLE OC 8GB GDDR6 128-bit DLSS 3.0</OfferTitle>
-          <Price>PRET: 2699,99 RON</Price>
+          <OfferTitle>Consola Microsoft Xbox Series S 512GB White</OfferTitle>
+          <Price>PRET: 1.379,99 RON</Price>
+          <OfferDescription>
+            Consola Microsoft Xbox Series S 512GB White
+          </OfferDescription>
           
-          <AddToCartButton onClick={handleAddToCart}>Adauga in cos</AddToCartButton>
         </OfferDetails>
       </OfferItem>
     </Container>
   );
 };
 
-export default PlacaVideo;
+export default XboxN;

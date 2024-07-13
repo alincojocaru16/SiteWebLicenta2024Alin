@@ -1,4 +1,4 @@
-// src/pages/PlacaVideo.js
+// src/pages/AsusVivo.js
 import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { CartContext } from './CartContext';
@@ -82,15 +82,15 @@ const AddToCartButton = styled.button`
   }
 `;
 
-const PlacaVideo = () => {
+const AsusVivoN = () => {
   const { addToCart } = useContext(CartContext);
   const navigate = useNavigate();
 
   const handleAddToCart = () => {
     const item = {
-      title: "Placa video GIGABYTE GeForce RTX 4060 EAGLE OC 8GB GDDR6 128-bit DLSS 3.0",
-      price: "2699,99 RON",
-      image: require('../Poze/placaGeForceRTX4060.jpg')
+      title: "Laptop ASUS 15.6'' Vivobook Go 15 E1504FA",
+      price: "1698,99 RON",
+      image: require('../Poze/asusVivabook.jpg')
     };
     addToCart(item);
     navigate('/cart');
@@ -99,16 +99,20 @@ const PlacaVideo = () => {
   return (
     <Container>
       <OfferItem>
-        <OfferImage src={require('../Poze/placaGeForceRTX4060.jpg')} alt="Placa video" />
+        <OfferImage src={require('../Poze/asusVivabook.jpg')} alt="Asus Vivobook" />
         <OfferDetails>
-          <OfferTitle>Placa video GIGABYTE GeForce RTX 4060 EAGLE OC 8GB GDDR6 128-bit DLSS 3.0</OfferTitle>
-          <Price>PRET: 2699,99 RON</Price>
-          
-          <AddToCartButton onClick={handleAddToCart}>Adauga in cos</AddToCartButton>
+          <OfferTitle>Laptop ASUS 15.6'' Vivobook Go 15 E1504FA</OfferTitle>
+          <Price>PRET: 1698,99 RON</Price>
+          <OfferDescription>
+            Laptop ASUS 15.6'' Vivobook Go 15 E1504FA, FHD, Procesor AMD Ryzen™ 5 7520U (4M Cache, up to 4.3 GHz), 8GB DDR5, 512GB SSD, Radeon 610M, No OS, Mixed Black (
+            <Discount>12% reducere</Discount>
+            )
+          </OfferDescription>
+    
         </OfferDetails>
       </OfferItem>
     </Container>
   );
 };
 
-export default PlacaVideo;
+export default AsusVivoN;

@@ -1,4 +1,4 @@
-// src/pages/PlacaVideo.js
+// src/pages/AsusTuf.js
 import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { CartContext } from './CartContext';
@@ -82,15 +82,15 @@ const AddToCartButton = styled.button`
   }
 `;
 
-const PlacaVideo = () => {
+const AsusTufN = () => {
   const { addToCart } = useContext(CartContext);
   const navigate = useNavigate();
 
   const handleAddToCart = () => {
     const item = {
-      title: "Placa video GIGABYTE GeForce RTX 4060 EAGLE OC 8GB GDDR6 128-bit DLSS 3.0",
-      price: "2699,99 RON",
-      image: require('../Poze/placaGeForceRTX4060.jpg')
+      title: "Laptop ASUS Gaming 15.6'' TUF F15 FX507ZC4",
+      price: "3498,99 RON",
+      image: require('../Poze/laptopAsusTuf.jpg')
     };
     addToCart(item);
     navigate('/cart');
@@ -99,16 +99,20 @@ const PlacaVideo = () => {
   return (
     <Container>
       <OfferItem>
-        <OfferImage src={require('../Poze/placaGeForceRTX4060.jpg')} alt="Placa video" />
+        <OfferImage src={require('../Poze/laptopAsusTuf.jpg')} alt="Asus Tuf" />
         <OfferDetails>
-          <OfferTitle>Placa video GIGABYTE GeForce RTX 4060 EAGLE OC 8GB GDDR6 128-bit DLSS 3.0</OfferTitle>
-          <Price>PRET: 2699,99 RON</Price>
-          
-          <AddToCartButton onClick={handleAddToCart}>Adauga in cos</AddToCartButton>
+          <OfferTitle>Laptop ASUS Gaming 15.6'' TUF F15 FX507ZC4</OfferTitle>
+          <Price>PRET: 3498,99 RON</Price>
+          <OfferDescription>
+            Laptop ASUS Gaming 15.6'' TUF F15 FX507ZC4, FHD 144Hz, Procesor Intel® Core™ i5-12500H (18M Cache, up to 4.50 GHz), 16GB DDR4, 512GB SSD, GeForce RTX 3050 4GB, No OS, Mecha Gray (
+            <Discount>9% reducere</Discount>
+            )
+          </OfferDescription>
+         
         </OfferDetails>
       </OfferItem>
     </Container>
   );
 };
 
-export default PlacaVideo;
+export default AsusTufN;

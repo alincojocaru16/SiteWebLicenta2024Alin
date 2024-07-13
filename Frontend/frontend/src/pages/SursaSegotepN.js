@@ -1,4 +1,4 @@
-// src/pages/PlacaVideo.js
+// src/pages/SursaSegotep.js
 import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { CartContext } from './CartContext';
@@ -56,10 +56,6 @@ const OfferDescription = styled.p`
   word-wrap: break-word;
 `;
 
-const Discount = styled.span`
-  color: red;
-`;
-
 const Price = styled.p`
   font-size: 18px;
   font-weight: bold;
@@ -82,15 +78,15 @@ const AddToCartButton = styled.button`
   }
 `;
 
-const PlacaVideo = () => {
+const SursaSegotepN = () => {
   const { addToCart } = useContext(CartContext);
   const navigate = useNavigate();
 
   const handleAddToCart = () => {
     const item = {
-      title: "Placa video GIGABYTE GeForce RTX 4060 EAGLE OC 8GB GDDR6 128-bit DLSS 3.0",
-      price: "2699,99 RON",
-      image: require('../Poze/placaGeForceRTX4060.jpg')
+      title: "Sursa Segotep GP Series 500W, 80 PLUS GOLD",
+      price: "284,99 RON",
+      image: require('../Poze/sursa.jpg')
     };
     addToCart(item);
     navigate('/cart');
@@ -99,16 +95,18 @@ const PlacaVideo = () => {
   return (
     <Container>
       <OfferItem>
-        <OfferImage src={require('../Poze/placaGeForceRTX4060.jpg')} alt="Placa video" />
+        <OfferImage src={require('../Poze/sursa.jpg')} alt="Sursa Segotep" />
         <OfferDetails>
-          <OfferTitle>Placa video GIGABYTE GeForce RTX 4060 EAGLE OC 8GB GDDR6 128-bit DLSS 3.0</OfferTitle>
-          <Price>PRET: 2699,99 RON</Price>
+          <OfferTitle>Sursa Segotep GP Series 500W, 80 PLUS GOLD</OfferTitle>
+          <Price>PRET: 284,99 RON</Price>
+          <OfferDescription>
+            Sursa Segotep GP Series 500W, 80 PLUS GOLD
+          </OfferDescription>
           
-          <AddToCartButton onClick={handleAddToCart}>Adauga in cos</AddToCartButton>
         </OfferDetails>
       </OfferItem>
     </Container>
   );
 };
 
-export default PlacaVideo;
+export default SursaSegotepN;

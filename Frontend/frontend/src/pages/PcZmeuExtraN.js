@@ -1,4 +1,4 @@
-// src/pages/PlacaVideo.js
+// src/pages/PcZmeuExtra.js
 import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { CartContext } from './CartContext';
@@ -82,15 +82,15 @@ const AddToCartButton = styled.button`
   }
 `;
 
-const PlacaVideo = () => {
+const PcZmeuExtraN = () => {
   const { addToCart } = useContext(CartContext);
   const navigate = useNavigate();
 
   const handleAddToCart = () => {
     const item = {
-      title: "Placa video GIGABYTE GeForce RTX 4060 EAGLE OC 8GB GDDR6 128-bit DLSS 3.0",
-      price: "2699,99 RON",
-      image: require('../Poze/placaGeForceRTX4060.jpg')
+      title: "PC Gaming ZMEU Extra",
+      price: "2555.55 RON",
+      image: require('../Poze/pc2.jpg')
     };
     addToCart(item);
     navigate('/cart');
@@ -99,11 +99,13 @@ const PlacaVideo = () => {
   return (
     <Container>
       <OfferItem>
-        <OfferImage src={require('../Poze/placaGeForceRTX4060.jpg')} alt="Placa video" />
+        <OfferImage src={require('../Poze/pc2.jpg')} alt="PC Gaming ZMEU Extra" />
         <OfferDetails>
-          <OfferTitle>Placa video GIGABYTE GeForce RTX 4060 EAGLE OC 8GB GDDR6 128-bit DLSS 3.0</OfferTitle>
-          <Price>PRET: 2699,99 RON</Price>
-          
+          <OfferTitle>PC Gaming ZMEU Extra</OfferTitle>
+          <Price>PRET: 2555.55 RON</Price>
+          <OfferDescription>
+            PC Gaming ZMEU Extra, Intel i5-10400F 2.9GHz, 8GB DDR4, 500GB SSD, GTX 1650 4GB GDDR6, Iluminare RGB
+          </OfferDescription>
           <AddToCartButton onClick={handleAddToCart}>Adauga in cos</AddToCartButton>
         </OfferDetails>
       </OfferItem>
@@ -111,4 +113,4 @@ const PlacaVideo = () => {
   );
 };
 
-export default PlacaVideo;
+export default PcZmeuExtraN;

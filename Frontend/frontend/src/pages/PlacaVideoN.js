@@ -82,7 +82,7 @@ const AddToCartButton = styled.button`
   }
 `;
 
-const PlacaVideo = () => {
+const PlacaVideoN = () => {
   const { addToCart } = useContext(CartContext);
   const navigate = useNavigate();
 
@@ -104,11 +104,11 @@ const PlacaVideo = () => {
           <OfferTitle>Placa video GIGABYTE GeForce RTX 4060 EAGLE OC 8GB GDDR6 128-bit DLSS 3.0</OfferTitle>
           <Price>PRET: 2699,99 RON</Price>
           
-          <AddToCartButton onClick={handleAddToCart}>Adauga in cos</AddToCartButton>
+         
         </OfferDetails>
       </OfferItem>
     </Container>
   );
 };
 
-export default PlacaVideo;
+export default PlacaVideoN;

@@ -170,7 +170,7 @@ export default function Home() {
             <OfferTitle>CELE MAI BUNE OFERTE</OfferTitle>
             <OfferItemsContainer>
                 <OfferItem>
-                    <Link to='/zmeu'>
+                    <Link to='/zmeuN'>
                         <OfferImage src={require('../Poze/pcZmeu.jpg')} alt="PC ZMEU" />
                         <OfferDescription>
                             <Price>PRET: 1499,99 RON</Price>
@@ -181,7 +181,7 @@ export default function Home() {
                     </Link>
                 </OfferItem>
                 <OfferItem>
-                    <Link to='/PcBlue'>
+                    <Link to='/PcBlueN'>
                         <OfferImage src={require('../Poze/pcBlue.jpg')} alt="PC ZMEU" />
                         <OfferDescription>
                             <Price>PRET: 5398,99 RON</Price>
@@ -193,7 +193,7 @@ export default function Home() {
                 </OfferItem>
 
                 <OfferItem>
-                    <Link to='/PcWhite'>
+                    <Link to='/PcWhiteN'>
                         <OfferImage src={require('../Poze/pcWhite.jpg')} alt="PC ZMEU" />
                         <OfferDescription>
                             <Price>PRET: 3699,99 RON</Price>
@@ -204,7 +204,7 @@ export default function Home() {
                     </Link>
                 </OfferItem>
                 <OfferItem>
-                    <Link to='/AsusTuf'>
+                    <Link to='/AsusTufN'>
                         <OfferImage src={require('../Poze/laptopAsusTuf.jpg')} alt="PC ZMEU" />
                         <OfferDescription>
                             <Price>PRET: 3498,99 RON</Price>
@@ -216,7 +216,7 @@ export default function Home() {
                 </OfferItem>
 
                 <OfferItem>
-                    <Link to='/AsusVivo'>
+                    <Link to='/AsusVivoN'>
                         <OfferImage src={require('../Poze/asusVivabook.jpg')} alt="PC ZMEU" />
                         <OfferDescription>
                             <Price>PRET: 1698,99 RON</Price>
@@ -227,7 +227,7 @@ export default function Home() {
                     </Link>
                 </OfferItem>
                 <OfferItem>
-                    <Link to='/PS5'>
+                    <Link to='/PS5N'>
                         <OfferImage src={require('../Poze/ps5Bun.jpg')} alt="PC ZMEU" />
                         <OfferDescription>
                             <Price>PRET: 2699,99 RON</Price>

@@ -1,7 +1,7 @@
-// src/pages/PlacaVideo.js
+// src/pages/pcZmeu.js
 import React, { useContext } from 'react';
 import styled from 'styled-components';
-import { CartContext } from './CartContext';
+import { CartContext } from './CartContext'; // Ensure the correct path
 import { useNavigate } from 'react-router-dom';
 
 const Container = styled.div`
@@ -82,33 +82,37 @@ const AddToCartButton = styled.button`
   }
 `;
 
-const PlacaVideo = () => {
+const ZmeuN = () => {
   const { addToCart } = useContext(CartContext);
   const navigate = useNavigate();
 
   const handleAddToCart = () => {
     const item = {
-      title: "Placa video GIGABYTE GeForce RTX 4060 EAGLE OC 8GB GDDR6 128-bit DLSS 3.0",
-      price: "2699,99 RON",
-      image: require('../Poze/placaGeForceRTX4060.jpg')
+      title: "PC Gaming ZMEU Max",
+      price: "1499,99 RON",
+      image: require('../Poze/pcZmeu.jpg')
     };
     addToCart(item);
-    navigate('/cart');
+    navigate('/cart'); // Navigate to the cart page
   };
 
   return (
     <Container>
       <OfferItem>
-        <OfferImage src={require('../Poze/placaGeForceRTX4060.jpg')} alt="Placa video" />
+        <OfferImage src={require('../Poze/pcZmeu.jpg')} alt="PC ZMEU" />
         <OfferDetails>
-          <OfferTitle>Placa video GIGABYTE GeForce RTX 4060 EAGLE OC 8GB GDDR6 128-bit DLSS 3.0</OfferTitle>
-          <Price>PRET: 2699,99 RON</Price>
+          <OfferTitle>PC Gaming Blue Legendar Ultra</OfferTitle>
+          <Price>PRET: 1499,99 RON</Price>
+          <OfferDescription>
+          PC Gaming ZMEU Max, AMD Ryzen 3 3200G 3.6GHz, 8GB DDR4, 1TB SSD, AMD Radeon Vega 8, Iluminare RGB (
+            <Discount>25% reducere</Discount>
+            )
+          </OfferDescription>
           
-          <AddToCartButton onClick={handleAddToCart}>Adauga in cos</AddToCartButton>
         </OfferDetails>
       </OfferItem>
     </Container>
   );
 };
 
-export default PlacaVideo;
+export default ZmeuN;
