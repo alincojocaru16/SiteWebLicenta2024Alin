@@ -90,7 +90,7 @@ export default function ConsoleClient() {
                     <a href='/Xbox'>
                         <OfferImage src={require('../Poze/xbox.jpg')} alt="Xbox" />
                         <OfferDescription>
-                            <Price>PRET: 1.379,99 RON</Price>
+                            <Price>PRET: 1379,99 RON</Price>
                             Consola Microsoft Xbox Series S 512GB White
                         </OfferDescription>
                     </a>

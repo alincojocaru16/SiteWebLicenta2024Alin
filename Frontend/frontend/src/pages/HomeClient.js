@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useLocation, Link, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import MenuClient from './MenuClient';
+import { CartContext } from './CartContext';
 
 const PageContainer = styled.div`
   background-color: #e6f0ff;
@@ -185,10 +186,29 @@ export default function HomeClient() {
   const location = useLocation();
   const navigate = useNavigate();
   const { userData } = location.state || {};
+  const { clearUser } = useContext(CartContext);
+  const [searchQuery, setSearchQuery] = useState('');
 
   const handleLogout = () => {
+    clearUser(); // Clear the user data and cart items
     navigate('/');
   };
+
+  const handleSearch = () => {
+    const query = searchQuery.toLowerCase();
+
+    if (query.includes('calculator') || query.includes('pc') || query.includes('calculatoare')) {
+      navigate('/calculatoareC');
+  } else if (query.includes('laptop') || query.includes('laptopuri') || query.includes('asus')) {
+      navigate('/laptopC');
+  } else if (query.includes('xbox') || query.includes('consola') || query.includes('console')|| query.includes('ps') || query.includes('ps4') || query.includes('ps5') || query.includes('console')) {
+      navigate('/consoleC');
+  } else if (query.includes('procesor') || query.includes('placa de baza') || query.includes('placa')|| query.includes('sursa') || query.includes('ram') ||query.includes('memorie') || query.includes('placa video') || query.includes('componente') ) {
+      navigate('/componenteC');
+  } else {
+      alert('Căutare nereușită. Vă rugăm să încercați alt termen.');
+  }
+};
 
   return (
     <PageContainer>
@@ -215,8 +235,13 @@ export default function HomeClient() {
       </MenuContainer>
 
       <SearchBar>
-        <SearchInput type="text" placeholder="Caută produsul" />
-        <SearchButton>Caută</SearchButton>
+        <SearchInput
+          type="text"
+          placeholder="Caută produsul"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+        />
+        <SearchButton onClick={handleSearch}>Caută</SearchButton>
       </SearchBar>
 
       <LeftImage src={require('../Poze/superOferta.png')} alt="Super Oferta" />

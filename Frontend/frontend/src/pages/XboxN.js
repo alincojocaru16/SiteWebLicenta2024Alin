@@ -89,7 +89,7 @@ const XboxN = () => {
   const handleAddToCart = () => {
     const item = {
       title: "Consola Microsoft Xbox Series S 512GB White",
-      price: "1.379,99 RON",
+      price: "1379,99 RON",
       image: require('../Poze/xbox.jpg')
     };
     addToCart(item);
@@ -102,7 +102,7 @@ const XboxN = () => {
         <OfferImage src={require('../Poze/xbox.jpg')} alt="Xbox" />
         <OfferDetails>
           <OfferTitle>Consola Microsoft Xbox Series S 512GB White</OfferTitle>
-          <Price>PRET: 1.379,99 RON</Price>
+          <Price>PRET: 1379,99 RON</Price>
           <OfferDescription>
             Consola Microsoft Xbox Series S 512GB White
           </OfferDescription>

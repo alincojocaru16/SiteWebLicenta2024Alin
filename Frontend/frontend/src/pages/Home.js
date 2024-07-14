@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import Menu from './Menu';
-import { Link } from 'react-router-dom'; // Importăm Link din React Router
+import { Link, useNavigate } from 'react-router-dom';
 
 const StyledButton = styled.button`
     background-color: #4CAF50;
@@ -19,14 +19,14 @@ const StyledButton = styled.button`
 
 const Container = styled.div`
     position: relative;
-    min-height: 100vh; /* Înălțimea minimă pentru a ocupa întreaga pagină */
-    background-color: #e6f0ff; /* Fundal albastru deschis */
+    min-height: 100vh;
+    background-color: #e6f0ff;
 `;
 
 const ActionButtons = styled.div`
     position: fixed;
-    top: 10px; /* Ajustează pentru spațiu între butoane și marginea de sus */
-    right: 10px; /* Ajustează pentru spațiu între butoane și marginea din dreapta */
+    top: 10px;
+    right: 10px;
     z-index: 1;
 `;
 
@@ -71,7 +71,7 @@ const LeftImage = styled.img`
     top: 25%;
     left: 20%;
     transform: translate(-50%, -50%);
-    max-height: 80px; /* Setează o înălțime maximă pentru imagine */
+    max-height: 80px;
 `;
 
 const RightImage = styled.img`
@@ -79,81 +79,99 @@ const RightImage = styled.img`
     top: 25%;
     left: 74%;
     transform: translate(50%, -50%);
-    max-height: 80px; /* Setează o înălțime maximă pentru imagine */
+    max-height: 80px;
 `;
 
 const OfferTitle = styled.h2`
-    position: relative; /* Setează poziția relativă pentru a poziționa pozele relative la acest element */
+    position: relative;
     font-size: 24px;
     font-weight: bold;
-    color: red; /* Setăm culoarea textului roșu */
-    margin-bottom: -10px; /* Spațiu între text și următorul element */
-    margin-top: 90px; /* Adaugă spațiu superior */
-    text-align: center; /* Aliniere text la centru */
+    color: red;
+    margin-bottom: -10px;
+    margin-top: 90px;
+    text-align: center;
 `;
 
-
 const OfferImage = styled.img`
-    width: 100px; /* Lățimea imaginii */
-    height: auto; /* Înălțimea se ajustează automat pentru a menține proporțiile */
-    margin-bottom: 10px; /* Spațiu între imagine și descriere */
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
 `;
 
 const OfferDescription = styled.p`
-    margin: 0; /* Elimină marginile implicit adăugate de paragraf */
-    font-weight: bold; /* Face textul bold */
-    display: inline-block; /* Afișează textul pe o singură linie */
-    max-width: 200px; /* Setează lățimea maximă pentru text */
-    word-wrap: break-word; /* Permite cuvintelor să se împartă pe mai multe linii */
+    margin: 0;
+    font-weight: bold;
+    display: inline-block;
+    max-width: 200px;
+    word-wrap: break-word;
 `;
 
 const Discount = styled.span`
-    color: red; /* Setează culoarea textului la roșu */
+    color: red;
 `;
 
 const Price = styled.p`
-    font-size: 18px; /* Setează dimensiunea textului pentru preț */
-    font-weight: bold; /* Face textul bold */
-    margin: 0; /* Elimină marginile implicit adăugate de paragraf */
-    margin-bottom: 5px; /* Spațiu între preț și descriere */
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 5px;
 `;
 
 const OfferItemsContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between; /* Așază elementele la începutul, mijlocul și sfârșitul containerului */
-    gap: 20px; /* Spațiu între elementele din container */
-    margin-top: 120px; /* Margin de sus */
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 120px;
     padding: 0 20px;
 
     @media (max-width: 1200px) {
-        justify-content: space-around; /* Ajustează poziția elementelor pe ecrane mai mici */
+        justify-content: space-around;
     }
 `;
 
 const OfferItem = styled.div`
-    width: calc(16.67% - 20px); /* Lățimea fiecărui element, pentru a încadra 6 pe un rând */
-    padding: 10px; /* Padding pentru a separa conținutul */
-    background-color: #f9f9f9; /* Culoare de fundal pentru element */
-    border-radius: 8px; /* Colțuri rotunjite */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Umbra pentru efect de adâncime */
-    transition: transform 0.3s ease; /* Tranziție pentru efect de hover */
+    width: calc(16.67% - 20px);
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
     &:hover {
-        transform: translateY(-5px); /* Efect de ridicare la hover */
+        transform: translateY(-5px);
     }
 
     @media (max-width: 992px) {
-        width: calc(33.33% - 20px); /* Ajustează lățimea pentru a încadra 3 pe un rând */
+        width: calc(33.33% - 20px);
     }
     @media (max-width: 768px) {
-        width: calc(50% - 20px); /* Ajustează lățimea pentru a încadra 2 pe un rând */
+        width: calc(50% - 20px);
     }
     @media (max-width: 576px) {
-        width: calc(100% - 20px); /* Ajustează lățimea pentru a încadra 1 pe un rând */
+        width: calc(100% - 20px);
     }
 `;
 
 export default function Home() {
+    const [searchQuery, setSearchQuery] = useState('');
+    const navigate = useNavigate();
+
+    const handleSearch = () => {
+        const query = searchQuery.toLowerCase();
+
+        if (query.includes('calculator') || query.includes('pc') || query.includes('calculatoare')) {
+            navigate('/calculatoare');
+        } else if (query.includes('laptop') || query.includes('laptopuri') || query.includes('asus')) {
+            navigate('/laptop');
+        } else if (query.includes('xbox') || query.includes('consola') || query.includes('console')|| query.includes('ps') || query.includes('ps4') || query.includes('ps5') || query.includes('console')) {
+            navigate('/console');
+        } else if (query.includes('procesor') || query.includes('placa de baza') || query.includes('placa')|| query.includes('sursa') || query.includes('ram') ||query.includes('memorie') || query.includes('placa video') || query.includes('componente') ) {
+            navigate('/componente');
+        } else {
+            alert('Căutare nereușită. Vă rugăm să încercați alt termen.');
+        }
+    };
+
     return (
         <Container>
             <Menu />
@@ -162,8 +180,13 @@ export default function Home() {
                 <StyledButton as={Link} to="/register">Register</StyledButton>
             </ActionButtons>
             <SearchBar>
-                <SearchInput type="text" placeholder="Caută produsul" />
-                <SearchButton>Caută</SearchButton>
+                <SearchInput
+                    type="text"
+                    placeholder="Caută produsul"
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                />
+                <SearchButton onClick={handleSearch}>Caută</SearchButton>
             </SearchBar>
             <LeftImage src={require('../Poze/superOferta.png')} alt="Super Oferta" />
             <RightImage src={require('../Poze/superOferta.png')} alt="Super Oferta" />
