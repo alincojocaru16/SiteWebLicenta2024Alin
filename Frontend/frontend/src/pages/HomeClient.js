@@ -225,9 +225,7 @@ export default function HomeClient() {
           </div>
           {userData && (
             <>
-              <div>
-                <Link to="/login">{userData.EmailClient}</Link>
-              </div>
+               <div>{userData.EmailClient}</div>
               <LogoutButton onClick={handleLogout}>Deconectare</LogoutButton>
             </>
           )}
